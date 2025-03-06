@@ -6,7 +6,7 @@ import postcssPxToRem from 'postcss-pxtorem'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/site/',
+  base: '/',
   plugins: [vue()],
   resolve: {
     alias: {
