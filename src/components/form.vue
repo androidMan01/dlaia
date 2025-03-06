@@ -120,8 +120,6 @@ onMounted(() => {
 
 <template>
   <div class="form_all_box">
-    <div class="form_box_bg_one"></div>
-    <div class="form_box_bg_two"></div>
     <el-form
         class="form_box"
         :model="formList"
@@ -245,26 +243,10 @@ onMounted(() => {
 <style scoped>
 .form_all_box {
   width: 100%;
-  position: relative;
+  background: url('@/assets/x2/form_bg.png') no-repeat center;
+  background-size: auto 100%;
 }
 
-.form_box_bg_one{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 618px;
-  height: 714px;
-  background-image: radial-gradient(circle at 50% 50%, rgba(158, 255, 247, 0.54), rgba(255, 255, 255, 0) 90%);
-}
-
-.form_box_bg_two{
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 714px;
-  height: 714px;
-  background-image: radial-gradient(circle at 50% 50%, rgba(158, 255, 247, 0.54), rgba(255, 255, 255, 0) 86%);
-}
 
 .form_box {
   display: flex;
@@ -455,14 +437,14 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 440px) {
-  .form_box_bg_one{
-    display: none;
-  }
-  .form_box_bg_two{
-    display: none;
-  }
+
   .form_container {
     width: 300px;
+  }
+
+  .form_all_box{
+    width: 100%;
+    background: transparent;
   }
 
   .form_box {

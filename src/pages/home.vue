@@ -348,7 +348,6 @@ onUnmounted(() => {
   <div class="home">
     <div class="home_one">
       <div class="home_one_image">
-        <div class="home_one_bottom"></div>
         <div class="home_text_content">
           <div class="home_title_text_ly">
             <div class="home_one_title">
@@ -483,7 +482,6 @@ onUnmounted(() => {
       </div>
     </div>
     <div class="home_four">
-      <div class="home_four_bottom"></div>
       <div class="four_item_box">
         <div class="four_item_box_content">
           <div class="gsap_one_title">
@@ -622,21 +620,10 @@ onUnmounted(() => {
 }
 
 .home_one_image {
-  background-image: url('@/assets/home-one-bgi.png');
-  background-size: 100% auto;
-  background-position: top;
-  background-repeat: no-repeat;
+  background: url('@/assets/home-one-bgi.png') no-repeat top,linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom ;
+  background-size: 100% auto,100% 293px;
   margin-top: calc(-100px * v-bind(scale));
   padding-top: calc(100px * v-bind(scale));;
-  position: relative;
-}
-
-.home_one_bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 293px;
-  background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1);
 }
 
 .home_one_title {
@@ -660,7 +647,7 @@ onUnmounted(() => {
 .home_text_content {
   display: flex;
   flex-flow: row nowrap;
-  padding-bottom: 293px;
+  padding-bottom: 100px;
 }
 
 .home_title_text_ly {
@@ -800,7 +787,6 @@ onUnmounted(() => {
 }
 
 .home_num_box {
-  position: absolute;
   width: 100%;
   bottom: 0;
   display: flex;
@@ -1053,17 +1039,9 @@ onUnmounted(() => {
 }
 
 .home_four {
-  background-color: #fff;
-  position: relative;
   color: #515151;
-}
-
-.home_four_bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 334px;
-  background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf);
+  background: white linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf) no-repeat bottom;
+  background-size: 100% 334px;
 }
 
 .four_border_left {
@@ -1742,6 +1720,12 @@ onUnmounted(() => {
       flex: 1;
     }
 
+    .home_text_content {
+      display: flex;
+      flex-flow: row nowrap;
+      padding-bottom: 0;
+    }
+
     .home_one_title_small {
       font-size: 17px;
     }
@@ -1870,7 +1854,9 @@ onUnmounted(() => {
 
   .home_four {
 
-
+    color: #515151;
+    background: white linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf) no-repeat bottom;
+    background-size: 100% 334px;
 
     .four_title {
       font-size: 18px;
@@ -1889,14 +1875,6 @@ onUnmounted(() => {
         padding-bottom: 40px;
         object-fit: contain;
       }
-    }
-
-    .home_four_bottom {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 334px;
-      background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf);
     }
   }
 

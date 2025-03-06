@@ -241,8 +241,6 @@ onMounted(() => {
       </div>
     </div>
     <div class="annotation_container">
-
-      <div class="annotation_container_bottom"></div>
       <div class="annotation_icon">
         <div class="annotation_icon_list">
           <div class="annotation_icon_list_item" v-for="item in iconList" :key="item">
@@ -330,17 +328,10 @@ onMounted(() => {
 .annotation_container {
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+  background-size: 100% 293px;
 }
 
-.annotation_container_bottom{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 293px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1);
-}
 
 .annotation_title_one {
   display: flex;
@@ -717,14 +708,10 @@ onMounted(() => {
     display: block;
   }
 
-  .annotation_container_bottom{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100px;
-    width: 100%;
-    background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1);
-    z-index: 1;
+  .annotation_container {
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+    background-size: 100% 100px;
   }
 }
 

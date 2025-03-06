@@ -156,7 +156,8 @@ const handleFormSubmit = async (formData) => {
 
 <template>
   <div class="box_top"></div>
-  <div class="platform_container" style="display: flex; flex-direction: column; justify-content: center; background-color: white">
+  <div class="platform_container"
+       style="display: flex; flex-direction: column; justify-content: center; background-color: white">
     <div class="platform_one" style="display: flex; flex-direction: column; align-items: center;">
       <div class="platform_title">OPEN DATA PLATFORM</div>
       <div class="platform_txt">
@@ -180,7 +181,6 @@ const handleFormSubmit = async (formData) => {
       <img class="gsap_platform_two" style="width: 100%;" src="@/assets/x2/platform_bot.png" alt="">
     </div>
     <div class="platform_three">
-      <div class="platform-three-bg"></div>
       <div class="platform_three_container" v-for="(item, index) in arrImg" :key="index">
         <img class="paltform_icon" src="@/assets/x1/paltform_icon.png" alt="">
 
@@ -278,17 +278,10 @@ const handleFormSubmit = async (formData) => {
 .platform_three {
   padding: 0 10%;
   margin: 0 auto;
-  position: relative;
   padding-bottom: 110px;
+  background: linear-gradient(to bottom, #38f3c1, #1ae28e) no-repeat bottom;
+  background-size: 100% calc(100% - 300px);
 
-  .platform-three-bg{
-    background-image: linear-gradient(to bottom, #38f3c1, #1ae28e);
-    position: absolute;
-    top: 200px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 200px);
-  }
 
   .platform_three_container {
     max-width: 1000px;
@@ -370,15 +363,15 @@ const handleFormSubmit = async (formData) => {
 .platform_form {
   width: 100%;
   /* padding: 50px 0; */
-  padding-top: 50px;
+  padding-top: 0;
 }
 
 @media screen and (max-width: 440px) {
   .platform_form {
-    padding-top: 30px;
+    padding-top: 0;
   }
 
-  .box_top{
+  .box_top {
     padding-top: 60px;
   }
 
@@ -390,6 +383,10 @@ const handleFormSubmit = async (formData) => {
   }
 
   .platform_three {
+    padding-bottom: 70px;
+    background: linear-gradient(to bottom, #38f3c1, #1ae28e) no-repeat bottom;
+    background-size: 100% calc(100% - 50px);
+
     .green_line {
       right: 20px;
       bottom: 5px;
