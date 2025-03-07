@@ -281,7 +281,6 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
   overflow: hidden;
 }
 
@@ -299,7 +298,8 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 50px 0;
+  padding: 90px 0 50px 0;
+  background-image: linear-gradient(to bottom, #01052d, #121a2a);
 }
 .media_one_title {
   font-family: 'Abril';
