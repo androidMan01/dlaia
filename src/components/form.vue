@@ -243,16 +243,15 @@ onMounted(() => {
 <style scoped>
 .form_all_box {
   width: 100%;
-  background: url('@/assets/x2/form_bg.png') no-repeat center;
-  background-size: auto 100%;
 }
 
 
 .form_box {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to bottom, transparent 50%, #fff 50%);
   padding-bottom: 50px;
+  background: url('@/assets/x2/form_bg.png') no-repeat center;
+  background-size: auto 100%;
 }
 
 .form_container {
