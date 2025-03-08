@@ -206,6 +206,8 @@ onUnmounted(() => {
     el.removeEventListener('touchstart', preventDefault)
   })
 })
+
+const selectedRouter =""
 </script>
 
 <template>
@@ -224,14 +226,14 @@ onUnmounted(() => {
             <!--            <span :style="{ color: platformShow ? '#1ae28e' : '' }">Platform</span>-->
             <span class="com-font-color font16 ">Platform</span>
             <img class="platform_arrow" :class="{ 'arrow_rotate': platformShow }" :src="arrowDown" alt="">
-            <div class="platform_bottm" v-show="platformShow">
-              <div class="pla_btm_two pointer_txt" @click="router.push('/annotation')">Data Annotation</div>
-              <div class="pla_btm_two pointer_txt" @click="router.push('/platform')">Open Data Platform</div>
+            <div class="platform_bottm" :class="{'menu-visible':platformShow}" v-show="platformShow">
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 2 }" @click="selectItem(2)">Data Annotation</div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 3 }" @click="selectItem(3)">Open Data Platform</div>
             </div>
           </div>
         </div>
-        <div class="ai-auto-labelling margin_right pointer_txt" @click="router.push('/labeling')">
-          <span class="com-font-color font16 ">AI Auto-Labelling</span>
+        <div class="ai-auto-labelling margin_right pointer_txt" @click="toggleAuto">
+          <span class="com-font-color font16 " :class="{active: selectedIndex === 4 }" >AI Auto-Labelling</span>
         </div>
         <div class="media margin_right pointer_txt" style="position: relative;">
           <div class="media_wrapper"
@@ -239,9 +241,9 @@ onUnmounted(() => {
                @mouseleave="toggleMedia(false)">
             <span class="com-font-color font16 ">Media</span>
             <img class="media_arrow" :class="{ 'arrow_rotate': mediaShow }" :src="arrowDown" alt="">
-            <div class="media_bottm" v-show="mediaShow">
-              <div class="pla_btm_two pointer_txt" @click="router.push('/media')">Medium</div>
-              <div class="pla_btm_two pointer_txt" @click="router.push('/video')">Video Tutorials</div>
+            <div class="media_bottm" :class="{'menu-visible':mediaShow}" v-show="mediaShow">
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 5 }" @click="selectItem(5)">Medium</div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 6 }"  @click="selectItem(6)">Video Tutorials</div>
             </div>
           </div>
         </div>
@@ -254,8 +256,8 @@ onUnmounted(() => {
             <span class="com-font-color font16 ">Community</span>
             <img class="community_arrow" :class="{ 'arrow_rotate': communityShow }" :src="arrowDown" alt="">
             <div class="community_bottm" v-show="communityShow">
-              <div class="pla_btm_two pointer_txt" @click="goX">Twitter/X</div>
-              <div class="pla_btm_two pointer_txt" @click="goTelegram">Telegram</div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 7 }"  @click="selectItem(7)">Twitter/X</div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 8 }"  @click="selectItem(8)">Telegram</div>
             </div>
           </div>
         </div>
@@ -378,7 +380,7 @@ onUnmounted(() => {
 
 .active {
   background-color: #fff;
-  color: #191933;
+  color: #1ae28e !important;
   border-radius: 0 0 18px 18px;
 }
 
@@ -400,7 +402,7 @@ onUnmounted(() => {
 }
 
 .margin_right {
-  margin-right: calc(30px * v-bind(scale));
+  margin-right: calc(50px * v-bind(scale));
 }
 
 .logo {
@@ -477,16 +479,16 @@ onUnmounted(() => {
 }
 
 .logo_end {
-  width: calc(112px * v-bind(scale));
-  height: calc(32px * v-bind(scale));
+  width: calc(153px * v-bind(scale));
+  height: calc(48px * v-bind(scale));
   margin-left: calc(60px * v-bind(scale));
   cursor: pointer;
 }
 
 .logo_end_small {
   display: none;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   /* margin-left: 60px; */
   cursor: pointer;
 }
@@ -515,6 +517,10 @@ onUnmounted(() => {
 }
 
 .pla_btm_two:hover {
+  color: #45da95;
+}
+
+.pla_btm_two_selected {
   color: #45da95;
 }
 
@@ -777,15 +783,23 @@ onUnmounted(() => {
   color: #000;
   width: 221px;
   padding: 12px 0 29px 20px;
-  opacity: 1;
-  transition: opacity 0.2s ease;
 
   border-radius: 4px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 21px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
+
+  opacity: 0; /* 初始状态：完全透明 */
+  transition: opacity 5s ease, top 5s ease; /* 添加过渡效果 */
 }
+
+.menu-visible {
+  opacity: 1; /* 最终状态：完全不透明 */
+  top: calc(100% + 35px);/* 最终状态：滑入到原始位置 */
+  transition: opacity 5s ease, top 5s ease; /* 添加过渡效果 */
+}
+
 
 /* 移除之前的过渡动画相关样式 */
 .fade-enter-active,
@@ -866,8 +880,8 @@ onUnmounted(() => {
 }
 
 .logo_end_small {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
 }
 
 @media screen and (max-width: 719px) {

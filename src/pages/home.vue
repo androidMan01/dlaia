@@ -350,6 +350,7 @@ onUnmounted(() => {
       <div class="home_one_image">
         <div class="home_text_content">
           <div class="home_title_text_ly">
+            <img class="home_one_ri_small" :src="homeOneRi" alt="">
             <div class="home_one_title">
               <span class="home_one_title_span">OPAN,COMPOSABLE WEB3 AI DATA</span> <br>
               <span class="home_one_title_span">INFRASTRUCTURE EMPOWERING</span><br>
@@ -489,7 +490,9 @@ onUnmounted(() => {
             <div class="four_txt">Distributed data ecosystems combine the best of Web2 and Web3 into a
               universal platform that allows anyone to monetise idle time by contributing AI data.
             </div>
-            <div class="four_more pointer_txt" @click="goOne">More →</div>
+            <div class="four_more pointer_txt" @click="goOne">
+              <span class="pointer_text">More</span>
+              <span class="pointer_arrow">→</span></div>
           </div>
           <div class="four_img_one">
             <img class="four_img_two_img" src="@/assets/four-two-aia.png" alt="">
@@ -503,7 +506,10 @@ onUnmounted(() => {
             <div class="four_txt" style="">An open data marketplace to support organic Web3 dataset
               bootstrapping through custom reward pools, directly on-chain or off-chain.
             </div>
-            <div class="four_more pointer_txt" @click="goTwo">More →</div>
+            <div class="four_more pointer_txt" @click="goTwo">
+              <span class="pointer_text">More</span>
+              <span class="pointer_arrow">→</span>
+            </div>
           </div>
           <div class="four_img_two">
             <img class="four_img_three_img" src="@/assets/x2/four-three-aia.png" alt="">
@@ -518,7 +524,10 @@ onUnmounted(() => {
             <div class="four_txt" style="">Unlock the true potential of AI and turbocharge your data efficiency
               with our proprietary AI auto-labelling technologies.
             </div>
-            <div class="four_more pointer_txt" @click="goThree">More →</div>
+            <div class="four_more pointer_txt" @click="goThree">
+              <span class="pointer_text">More</span>
+              <span class="pointer_arrow">→</span>
+            </div>
           </div>
           <div class="four_img_three">
             <img class="four_img_one_img" src="@/assets/four-aia.png" alt="">
@@ -620,15 +629,15 @@ onUnmounted(() => {
 }
 
 .home_one_image {
-  background: url('@/assets/home-one-bgi.png') no-repeat top,linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom ;
-  background-size: 100% auto,100% 293px;
+  background: url('@/assets/home-one-bgi.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+  background-size: 100% auto, 100% 293px;
   margin-top: calc(-100px * v-bind(scale));
-  padding-top: calc(100px * v-bind(scale));;
+  padding-top: calc(100px * v-bind(scale));
 }
 
 .home_one_title {
   font-family: 'Abril';
-  font-size: 34px;
+  font-size: 38px;
   line-height: 1.5;
   font-weight: 700;
   text-align: right;
@@ -660,6 +669,10 @@ onUnmounted(() => {
 .home_one_ri_ly {
   flex: 10;
   display: flex;
+}
+
+.home_one_ri_small {
+  display: none;
 }
 
 .home_one_ri {
@@ -701,8 +714,7 @@ onUnmounted(() => {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
   text-align: right;
   width: 500px;
 }
@@ -855,9 +867,10 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #f9f9f9;
   height: 115px;
   overflow: hidden;
+  box-shadow: 0 20px 28px 0 rgba(233, 233, 233, 0.5);
+  background-color: #fff;
 }
 
 .logo_track {
@@ -880,7 +893,7 @@ onUnmounted(() => {
 }
 
 .logo-item {
-  height: 30px;
+  height: 38px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -1058,12 +1071,21 @@ onUnmounted(() => {
 
 .four_more {
   width: 80px;
-  background-color: #00ff99;
   color: #191933;
   font-size: 20px;
   padding: 10px 20px;
   border-radius: 50px;
   margin-top: 80px;
+  background-image: linear-gradient(to left, #38f3df, #36ffab 39%);
+}
+
+.pointer_text, .pointer_arrow{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pointer_arrow{
+  margin-left: 6px;
 }
 
 .four_img_one {
@@ -1074,7 +1096,7 @@ onUnmounted(() => {
 }
 
 .four_img_one_img {
-  width: 800px;
+  width: 850px;
   padding-right: 150px;
   padding-bottom: 50px;
 }
@@ -1085,7 +1107,7 @@ onUnmounted(() => {
 }
 
 .four_img_two_img {
-  height: 600px;
+  height: 700px;
 }
 
 .four_img_three {
@@ -1094,7 +1116,7 @@ onUnmounted(() => {
 }
 
 .four_img_three_img {
-  width: 650px;
+  width: 700px;
   padding-right: 150px;
   padding-bottom: 50px;
 }
@@ -1462,12 +1484,10 @@ onUnmounted(() => {
   }
 
   .home_one_image {
-    background-image: url('@/assets/home-one-bga.png');
-    background-size: 100% auto;
-    background-position: top;
-    background-repeat: no-repeat;
-    margin-top: -60px;
-    position: relative;
+    background: url('@/assets/home-one-bgi.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+    background-size: 100% auto, 100% 293px;
+    margin-top: calc(-100px * v-bind(scale));
+    padding-top: calc(100px * v-bind(scale));
   }
 
   .home_title_text_ly {
@@ -1511,6 +1531,7 @@ onUnmounted(() => {
     font-size: 16px;
     padding: 30px 20px;
   }
+
 
   .home_num_box {
     display: flex;
@@ -1713,10 +1734,19 @@ onUnmounted(() => {
   .home_one {
     padding-top: 20px;
 
+    .home_one_image {
+      background-image: url('@/assets/home-one-bga.png');
+      background-size: 100% auto;
+      background-position: top;
+      background-repeat: no-repeat;
+      margin-top: -60px;
+      position: relative;
+    }
+
     .home_title_text_ly {
       display: flex;
       flex-flow: column nowrap;
-      padding-top: 122px;
+      padding-top: 20px;
       flex: 1;
     }
 
@@ -1786,6 +1816,13 @@ onUnmounted(() => {
       display: none;
     }
 
+    .home_one_ri_small {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin-left: 45%;
+    }
+
     .home_num_box_icon {
       width: 15px;
       object-fit: contain;
@@ -1838,6 +1875,17 @@ onUnmounted(() => {
     font-size: 14px;
   }
 
+  .two_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 20px 28px 0 #ffffff;
+  }
+
   .home_two_contain {
     padding: 0 30px;
 
@@ -1859,7 +1907,7 @@ onUnmounted(() => {
     background-size: 100% 334px;
 
     .four_title {
-      font-size: 18px;
+      font-size: 21px;
     }
 
     .four_more {
@@ -1868,15 +1916,53 @@ onUnmounted(() => {
     }
 
     .four_item_box_content {
+      padding: 0;
       .four_img_two_img {
-        height: 250px;
+        height: 290px;
         padding-right: 0;
-        padding-top: 20px;
-        padding-bottom: 40px;
+        padding-top: 0;
+        padding-bottom: 20px;
         object-fit: contain;
+      }
+
+      .four_img_three_img {
+        width: 100%;
+        padding-right: 0;
+        padding-top: 40px;
+        padding-bottom: 20px;
+      }
+
+      .four_img_one_img {
+        width: 100%;
+        padding-right: 0;
+        padding-top: 50px;
+        padding-bottom: 60px;
+      }
+
+
+
+      .four_img_one {
+        margin-top: 0;
+      }
+
+      .four_img_two{
+        margin: 0 30px;
+      }
+      .four_img_three{
+        margin: 0 20px;
       }
     }
   }
+
+  .gsap_one_title,
+  .gsap_two_title,
+  .gsap_three_title {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    padding: 0 30px;
+  }
+
+
 
 
   .home_three_circle_small {
@@ -2134,11 +2220,11 @@ onUnmounted(() => {
 }
 
 /* 添加图片悬停效果 */
-.four_img_two_img:hover,
-.four_img_three_img:hover,
-.four_img_one_img:hover {
-  transform: scale(1.02);
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+:deep(.four_img_two_img:hover),
+:deep(.four_img_three_img:hover),
+:deep(.four_img_one_img:hover) {
+  transform: scale(1.02) !important;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* 添加 five_img 相关样式 */

@@ -155,7 +155,7 @@ const handleFormSubmit = async (formData) => {
 </script>
 
 <template>
-  <div class="box_top"></div>
+  <!--  <div class="box_top"></div>-->
   <div class="platform_container"
        style="display: flex; flex-direction: column; justify-content: center; background-color: white">
     <div class="platform_one" style="display: flex; flex-direction: column; align-items: center;">
@@ -234,11 +234,15 @@ const handleFormSubmit = async (formData) => {
   padding-bottom: calc(150px * v-bind(scale));
 }
 
-.platform_one {
+.platform_container {
+  padding-top: calc(84px * v-bind(scale));
   background-image: url('@/assets/x1/platform_one.png');
   background-size: 100% auto;
   background-position: top;
   background-repeat: no-repeat;
+}
+
+.platform_one {
 }
 
 .platform_one_btn {
@@ -246,7 +250,8 @@ const handleFormSubmit = async (formData) => {
   border: 1px solid #1ae28e;
   border-radius: 50px;
   /* color: #1ae28e; */
-  margin-bottom: calc(200px * v-bind(scale));
+  margin-bottom: calc(100px * v-bind(scale));
+  margin-top: calc(100px * v-bind(scale));
   padding: calc(12px * v-bind(scale)) calc(25px * v-bind(scale));
   cursor: pointer;
   transition: all 0.3s ease;
@@ -266,7 +271,7 @@ const handleFormSubmit = async (formData) => {
   width: calc(34px * v-bind(scale));
   height: calc(34px * v-bind(scale));
   transition: transform 0.3s ease;
-  margin-left: 20px;
+  margin-left: calc(20px * v-bind(scale));
 }
 
 .platform_two {
@@ -367,6 +372,20 @@ const handleFormSubmit = async (formData) => {
 }
 
 @media screen and (max-width: 440px) {
+  .platform_container {
+    padding-top: 60px;
+    background-image: url('@/assets/x1/platform_one_mobile.png');
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .platform_two {
+    padding: 0 4%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
   .platform_form {
     padding-top: 0;
   }
@@ -376,10 +395,7 @@ const handleFormSubmit = async (formData) => {
   }
 
   .platform_one {
-    background-image: url('@/assets/x1/platform_one_mobile.png');
-    background-size: 100% auto;
-    background-position: top;
-    background-repeat: no-repeat;
+
   }
 
   .platform_three {

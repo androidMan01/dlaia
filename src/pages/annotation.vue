@@ -326,7 +326,6 @@ onMounted(() => {
 }
 
 .annotation_container {
-  max-width: 1000px;
   margin: 0 auto;
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
   background-size: 100% 293px;
@@ -438,6 +437,7 @@ onMounted(() => {
 }
 
 .annotation_icon {
+  max-width: 1000px;
   margin: 0 auto;
   padding: 100px 30px;
 }
@@ -460,20 +460,17 @@ onMounted(() => {
 }
 
 .annotation_icon_list_two_item {
-  text-align: center;
   width: 380px;
   height: 80px;
 }
 
 .annotation_icon_title {
-  text-align: center;
   font-size: 16px;
   font-weight: 700;
   color: #1ae28e;
 }
 
 .annotation_icon_desc {
-  text-align: center;
   font-size: 12px;
   font-weight: 400;
   color: #878787;
@@ -555,6 +552,7 @@ onMounted(() => {
   .annotation_icon_list_two {
     gap: 10px;
     padding: 0;
+    margin-top: 37px;
   }
 
   .annotation_list_title {

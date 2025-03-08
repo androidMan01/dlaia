@@ -185,6 +185,7 @@ onUnmounted(() => {
 .labeling_box{
   background: url('@/assets/x2/labeling_one_bg.png') no-repeat top , #FFFFFF ;
   background-size: 100% auto ,100% 100% ;
+  padding-top: 80px;
 }
 .box_top {
   padding-top: calc(84px * v-bind(scale));
@@ -406,6 +407,9 @@ onUnmounted(() => {
 }
 
 @media screen and (max-width: 480px) {
+  .labeling_box{
+    padding-top: 0;
+  }
   .box_top {
     padding-top: 60px;
   }
