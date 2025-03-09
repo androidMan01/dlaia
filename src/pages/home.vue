@@ -337,6 +337,10 @@ onMounted(() => {
     setTimeout(() => {
       ScrollTrigger.refresh();
     }, 500);
+  } else {
+    source1.value = 3620000
+    source2.value = 327000
+    source3.value = 305000
   }
 
   // 清理函数
@@ -405,9 +409,10 @@ onUnmounted(() => {
         </div>
         <div class="home_num_box">
           <div class="home_num_box_item">
-            <div style="text-align: left; display: flex; align-items: center;">
+            <div class="home_num_box_sub">
               <img class="home_num_box_icon" src="@/assets/x2/registered.png" alt="">
               <div class="home_num_box_content">
+                <img class="home_num_box_icon_mobile" src="@/assets/x2/registered.png" alt="">
                 <el-statistic
                     class="home_num_box_title"
                     :value="outputValue1"
@@ -419,12 +424,14 @@ onUnmounted(() => {
                 </el-statistic>
                 <div class="home_num_box_txt">Registered users</div>
               </div>
+              <div class="home_num_box_txt_mobile">Registered users</div>
             </div>
           </div>
           <div class="home_num_box_item">
-            <div style="text-align: left; display: flex; align-items: center;">
+            <div class="home_num_box_sub">
               <img class="home_num_box_icon" src="@/assets/x2/user.png" alt="">
               <div class="home_num_box_content">
+                <img class="home_num_box_icon_mobile" src="@/assets/x2/user.png" alt="">
                 <el-statistic
                     class="home_num_box_title"
                     :value="outputValue2"
@@ -436,13 +443,15 @@ onUnmounted(() => {
                 </el-statistic>
                 <div class="home_num_box_txt">Daily active users</div>
               </div>
+              <div class="home_num_box_txt_mobile">Daily active users</div>
             </div>
 
           </div>
           <div class="home_num_box_item">
-            <div style="text-align: left; display: flex; align-items: center;">
+            <div class="home_num_box_sub">
               <img class="home_num_box_icon" src="@/assets/x2/chain.png" alt="">
               <div class="home_num_box_content">
+                <img class="home_num_box_icon_mobile" src="@/assets/x2/chain.png" alt="">
                 <el-statistic
                     class="home_num_box_title"
                     :value="outputValue3"
@@ -454,6 +463,7 @@ onUnmounted(() => {
                 </el-statistic>
                 <div class="home_num_box_txt">Daily on-chain transactions</div>
               </div>
+              <div class="home_num_box_txt_mobile">Daily on-chain transactions</div>
             </div>
 
           </div>
@@ -830,6 +840,12 @@ onUnmounted(() => {
   flex-flow: row nowrap;
 }
 
+.home_num_box_sub {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
 .home_num_box_content {
   display: flex;
   flex-flow: column nowrap;
@@ -839,6 +855,10 @@ onUnmounted(() => {
 .home_num_box_icon {
   width: 50px;
   margin-right: 14px;
+}
+
+.home_num_box_icon_mobile {
+  display: none;
 }
 
 .home_num_box_title {
@@ -859,6 +879,11 @@ onUnmounted(() => {
   padding-top: 5px;
   color: #0a091c;
   font-family: 'PingFangSC';
+}
+
+.home_num_box_txt_mobile {
+  display: none;
+  color: #0a091c;
 }
 
 .home_two {
@@ -1098,12 +1123,12 @@ onUnmounted(() => {
   background-image: linear-gradient(to left, #38f3df, #36ffab 39%);
 }
 
-.pointer_text, .pointer_arrow{
+.pointer_text, .pointer_arrow {
   display: inline-block;
   vertical-align: middle;
 }
 
-.pointer_arrow{
+.pointer_arrow {
   margin-left: 6px;
 }
 
@@ -1127,6 +1152,13 @@ onUnmounted(() => {
 
 .four_img_two_img {
   height: 700px;
+}
+
+/* 添加图片悬停效果 */
+.four_img_two_img,
+.four_img_three_img,
+.four_img_one_img {
+  pointer-events: none;
 }
 
 .four_img_three {
@@ -1512,8 +1544,28 @@ onUnmounted(() => {
   .home_title_text_ly {
     display: flex;
     flex-flow: column nowrap;
-    padding-top: 152px;
+    padding-top: 20px;
+    padding-right: 0;
     flex: 1;
+  }
+
+  .home_title_text_ly {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 50px;
+    padding-right: 0;
+    flex: 1;
+  }
+
+  .home_one_ri_ly {
+    display: none;
+  }
+
+  .home_one_ri_small {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin-left: 63%;
   }
 
   .home_text_content {
@@ -1531,7 +1583,7 @@ onUnmounted(() => {
   }
 
   .home_one_title_small {
-    font-family: 'Arial';
+    font-family: 'Abril';
     display: block;
     font-size: 30px;
     padding: 0 50px;
@@ -1542,8 +1594,14 @@ onUnmounted(() => {
   }
 
   .home_one_txt_small {
-    line-height: 2;
-    display: block;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider-item {
+    text-align: center;
   }
 
   .home_one_txt {
@@ -1551,6 +1609,12 @@ onUnmounted(() => {
     padding: 30px 20px;
   }
 
+  .home_one_btn {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .home_num_box {
     display: flex;
@@ -1564,6 +1628,10 @@ onUnmounted(() => {
   }
 
   .home_num_box_title {
+    font-size: 14px;
+  }
+
+  .home_num_box_title_add {
     font-size: 14px;
   }
 
@@ -1606,6 +1674,7 @@ onUnmounted(() => {
 
     .four_img_two_img {
       width: 100%;
+      height: auto;
       padding-right: 0;
       padding-top: 20px;
       padding-bottom: 40px;
@@ -1766,6 +1835,7 @@ onUnmounted(() => {
       display: flex;
       flex-flow: column nowrap;
       padding-top: 20px;
+      padding-right: 0;
       flex: 1;
     }
 
@@ -1831,6 +1901,13 @@ onUnmounted(() => {
       padding-bottom: 40px;
     }
 
+    .home_num_box_sub {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+    }
+
     .home_one_ri_ly {
       display: none;
     }
@@ -1839,13 +1916,26 @@ onUnmounted(() => {
       display: block;
       width: 120px;
       height: 120px;
-      margin-left: 45%;
+      margin-left: 48%;
     }
 
     .home_num_box_icon {
+      display: none;
       width: 15px;
       object-fit: contain;
       margin-right: 10px;
+    }
+
+    .home_num_box_icon_mobile {
+      width: 15px;
+      margin-right: 10px;
+      display: block;
+    }
+
+    .home_num_box_content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
     }
 
     .home_num_box_title {
@@ -1863,6 +1953,13 @@ onUnmounted(() => {
     .home_num_box_txt {
       font-size: 7px;
       padding-top: 5px;
+      display: none;
+    }
+
+    .home_num_box_txt_mobile {
+      padding-top: 5px;
+      font-size: 7px;
+      display: block;
     }
 
     .gradient_text {
@@ -1936,6 +2033,7 @@ onUnmounted(() => {
 
     .four_item_box_content {
       padding: 0;
+
       .four_img_two_img {
         height: 290px;
         padding-right: 0;
@@ -1959,15 +2057,15 @@ onUnmounted(() => {
       }
 
 
-
       .four_img_one {
         margin-top: 0;
       }
 
-      .four_img_two{
+      .four_img_two {
         margin: 0 30px;
       }
-      .four_img_three{
+
+      .four_img_three {
         margin: 0 20px;
       }
     }
@@ -1981,7 +2079,12 @@ onUnmounted(() => {
     padding: 0 30px;
   }
 
-
+  /* 添加图片悬停效果 */
+  .four_img_two_img,
+  .four_img_three_img,
+  .four_img_one_img {
+    pointer-events: none;
+  }
 
 
   .home_three_circle_small {
@@ -2042,6 +2145,7 @@ onUnmounted(() => {
   }
 
   .home_five {
+    pointer-events: none;
     .five_img_box_small {
       gap: 20px;
     }
@@ -2054,6 +2158,8 @@ onUnmounted(() => {
     .five_img {
       width: 136px;
     }
+
+
   }
 
   .home_seven {
@@ -2238,12 +2344,13 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
+
 /* 添加图片悬停效果 */
-:deep(.four_img_two_img:hover),
-:deep(.four_img_three_img:hover),
-:deep(.four_img_one_img:hover) {
-  transform: scale(1.02) !important;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+.four_img_two_img:hover,
+.four_img_three_img:hover,
+.four_img_one_img:hover {
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 添加 five_img 相关样式 */

@@ -361,7 +361,7 @@ onMounted(() => {
   margin: 0 auto;
   font-family: 'Abril';
   font-weight: 700;
-  padding-top: 80px;
+  padding-top: 100px;
   text-align: center;
   line-height: 1.5;
   font-size: 72px;

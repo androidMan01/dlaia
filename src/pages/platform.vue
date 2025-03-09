@@ -249,7 +249,7 @@ const handleFormSubmit = async (formData) => {
 .platform_one_btn_border{
   background: linear-gradient(to left, #91f8ff, #79ff62fb);
   margin-bottom: calc(180px * v-bind(scale));
-  margin-top: calc(20px * v-bind(scale));
+  margin-top: calc(30px * v-bind(scale));
   padding: 3px;
   border-radius: 50px;
 }
@@ -375,7 +375,7 @@ const handleFormSubmit = async (formData) => {
 .platform_form {
   width: 100%;
   /* padding: 50px 0; */
-  padding-top: 0;
+  padding-top: 100px;
 }
 
 @media screen and (max-width: 440px) {
@@ -390,7 +390,7 @@ const handleFormSubmit = async (formData) => {
   .platform_one_btn_border{
     background: linear-gradient(to left, #91f8ff, #79ff62fb);
     margin-bottom: calc(100px * v-bind(scale));
-    margin-top: calc(100px * v-bind(scale));
+    margin-top: calc(150px * v-bind(scale));
     padding: 1px;
     border-radius: 50px;
   }

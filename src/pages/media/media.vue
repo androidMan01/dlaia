@@ -406,7 +406,8 @@ onUnmounted(() => {
 
 @media screen and (max-width: 719px) {
   .media_one {
-    width: 90%;
+    width: 100%;
+    padding: 0 5%;
   }
 
   .media_one_title {
