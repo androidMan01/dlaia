@@ -1378,7 +1378,7 @@ onUnmounted(() => {
 }
 
 .home_seven {
-  padding: 100px 200px;
+  padding: 100px 80px;
   margin: 0 auto;
 }
 
@@ -1499,7 +1499,7 @@ onUnmounted(() => {
 /* 响应式样式 */
 @media screen and (max-width: 1440px) {
   .home_seven {
-    padding: 0 100px 50px 100px;
+    padding: 0 80px 50px 80px;
   }
 }
 
@@ -1518,7 +1518,7 @@ onUnmounted(() => {
   }
 
   .home_seven {
-    padding: 0 100px 50px 100px;
+    padding: 0 80px 50px 80px;
     /* width: 100%; */
   }
 }
