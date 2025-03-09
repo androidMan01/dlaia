@@ -387,6 +387,14 @@ const handleFormSubmit = async (formData) => {
     background-repeat: no-repeat;
   }
 
+  .platform_one_btn_border{
+    background: linear-gradient(to left, #91f8ff, #79ff62fb);
+    margin-bottom: calc(100px * v-bind(scale));
+    margin-top: calc(100px * v-bind(scale));
+    padding: 1px;
+    border-radius: 50px;
+  }
+
   .platform_two {
     padding: 0 4%;
     max-width: 1000px;
