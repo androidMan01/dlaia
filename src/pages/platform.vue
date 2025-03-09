@@ -5,8 +5,7 @@ import FormBox from '@/components/form.vue'
 import oneImg from '@/assets/x2/platform_one.png'
 import twoImg from '@/assets/x2/platform_two.png'
 import threeImg from '@/assets/x2/platform_three.png'
-
-import normalArrow from '@/assets/x2/platform_arrow.png'
+import normalArrowTrans from '@/assets/x2/platform_arrow_trans.png'
 import hoverArrow from '@/assets/x2/platform_arrow_hover.png'
 
 import {onMounted, onUnmounted, ref} from 'vue'
@@ -164,16 +163,18 @@ const handleFormSubmit = async (formData) => {
         Your One-Stop Web3<br>
         Custom Data Solution
       </div>
-      <div class="platform_one_btn"
-           @mouseenter="toggleWaitlist(true)"
-           @mouseleave="toggleWaitlist(false)"
-           @click="scrollToForm">
-        <div class="btn_content">
-          Join Waitlist
-          <img class="platform_arrow"
-               :src="arrowHovered ? hoverArrow : normalArrow"
-               :class="{ 'arrow-hover': arrowHovered }"
-               alt="">
+      <div class="platform_one_btn_border">
+        <div class="platform_one_btn"
+             @mouseenter="toggleWaitlist(true)"
+             @mouseleave="toggleWaitlist(false)"
+             @click="scrollToForm">
+          <div class="btn_content">
+            Join Waitlist
+            <img class="platform_arrow"
+                 :src="arrowHovered ? hoverArrow : normalArrowTrans"
+                 :class="{ 'arrow-hover': arrowHovered }"
+                 alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -245,13 +246,19 @@ const handleFormSubmit = async (formData) => {
 .platform_one {
 }
 
+.platform_one_btn_border{
+  background: linear-gradient(to left, #91f8ff, #79ff62fb);
+  margin-bottom: calc(180px * v-bind(scale));
+  margin-top: calc(20px * v-bind(scale));
+  padding: 3px;
+  border-radius: 50px;
+}
+
 .platform_one_btn {
   font-size: calc(22px * v-bind(scale));
-  border: 1px solid #1ae28e;
+  background: white;
   border-radius: 50px;
   /* color: #1ae28e; */
-  margin-bottom: calc(100px * v-bind(scale));
-  margin-top: calc(100px * v-bind(scale));
   padding: calc(12px * v-bind(scale)) calc(25px * v-bind(scale));
   cursor: pointer;
   transition: all 0.3s ease;

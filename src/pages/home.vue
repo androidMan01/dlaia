@@ -121,9 +121,9 @@ const detectMobile = () => {
   isMobile.value = mobileKeywords.some(keyword => userAgent.includes(keyword));
 };
 // 更新每个变量的值
-source1.value = 3620000
-source2.value = 327000
-source3.value = 305000
+// source1.value = 3620000
+// source2.value = 327000
+// source3.value = 305000
 const windowWidth = ref(window.innerWidth);
 // 计算字体大小
 const fontSize = computed(() => {
@@ -161,6 +161,23 @@ onMounted(() => {
   }
   const isMobile = window.innerWidth <= 768 || /mobile/i.test(navigator.userAgent);
   if (!isMobile) {
+    const homeNumBox = document.querySelectorAll('.home_num_box')
+    // 创建 ScrollTrigger
+    ScrollTrigger.create({
+      trigger: homeNumBox, // 触发器元素
+      start: 'top 90%', // 当元素顶部到达视口 80% 时触发
+      end: 'bottom 50%', // 当元素底部到达视口 20% 时结束
+      onEnter: () => {
+        console.log('Element entered viewport!');
+        source1.value = 3620000
+        source2.value = 327000
+        source3.value = 305000
+      },
+      onLeaveBack: () => {
+
+      },
+    });
+
     // 初始化所有需要动画的元素
     const animatedElements = [
       {el: '.gsap_one_title', y: 100},
@@ -642,7 +659,7 @@ onUnmounted(() => {
   font-weight: 700;
   text-align: right;
   letter-spacing: 0.76px;
-  line-height: 1.41;
+  line-height: 1.6;
 }
 
 .home_one_title_small {
@@ -663,6 +680,7 @@ onUnmounted(() => {
   display: flex;
   flex-flow: column nowrap;
   padding-top: 152px;
+  padding-right: calc(50px * v-bind(scale));
   flex: 12;
 }
 
@@ -717,6 +735,7 @@ onUnmounted(() => {
   font-size: 32px;
   text-align: right;
   width: 500px;
+  font-family: 'PingFangSC';
 }
 
 /* 定义滚动动画 */
@@ -824,7 +843,7 @@ onUnmounted(() => {
 
 .home_num_box_title {
   font-family: 'Arial';
-  font-weight: 700;
+  font-weight: normal;
   font-size: 36px;
   color: #1ae28e;
 }
