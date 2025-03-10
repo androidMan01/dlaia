@@ -248,8 +248,8 @@ const handleFormSubmit = async (formData) => {
 
 .platform_one_btn_border{
   background: linear-gradient(to left, #91f8ff, #79ff62fb);
-  margin-bottom: calc(180px * v-bind(scale));
-  margin-top: calc(30px * v-bind(scale));
+  margin-bottom: calc(140px * v-bind(scale));
+  margin-top: calc(60px * v-bind(scale));
   padding: 3px;
   border-radius: 50px;
 }
@@ -288,11 +288,12 @@ const handleFormSubmit = async (formData) => {
 }
 
 .platform_three {
-  padding: 0 10%;
-  margin: 0 auto;
   padding-bottom: 110px;
   background: linear-gradient(to bottom, #38f3c1, #1ae28e) no-repeat bottom;
   background-size: 100% calc(100% - 300px);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 
 
   .platform_three_container {
@@ -389,8 +390,8 @@ const handleFormSubmit = async (formData) => {
 
   .platform_one_btn_border{
     background: linear-gradient(to left, #91f8ff, #79ff62fb);
-    margin-bottom: calc(100px * v-bind(scale));
-    margin-top: calc(150px * v-bind(scale));
+    margin-bottom: calc(80px * v-bind(scale));
+    margin-top: calc(190px * v-bind(scale));
     padding: 1px;
     border-radius: 50px;
   }

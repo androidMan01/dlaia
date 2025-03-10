@@ -103,7 +103,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="box_top"></div>
   <div class="labeling_box">
     <div class="labeling_one">
       <div class="labeling_one_container">
@@ -185,7 +184,7 @@ onUnmounted(() => {
 .labeling_box{
   background: url('@/assets/x2/labeling_one_bg.png') no-repeat top , #FFFFFF ;
   background-size: 100% auto ,100% 100% ;
-  padding-top: 80px;
+  padding-top: calc(84px * v-bind(scale) + 80px);
 }
 .box_top {
   padding-top: calc(84px * v-bind(scale));
@@ -265,7 +264,7 @@ onUnmounted(() => {
   font-family: 'Abril';
   font-size: calc(40px * v-bind(scale));
   font-weight: 700;
-  padding: calc(40px * v-bind(scale)) 0;
+  padding: calc(50px * v-bind(scale)) 0 calc(40px * v-bind(scale)) 0;
 }
 
 .labeling_two_img {
@@ -408,7 +407,7 @@ onUnmounted(() => {
 
 @media screen and (max-width: 480px) {
   .labeling_box{
-    padding-top: 0;
+    padding-top: 60px;
   }
   .box_top {
     padding-top: 60px;
@@ -417,10 +416,6 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('@/assets/x2/labeling_one_bg.png');
-    background-size: 100% auto;
-    background-position: top;
-    background-repeat: no-repeat;
   }
   .labeling_two {
     padding-bottom: 50px;

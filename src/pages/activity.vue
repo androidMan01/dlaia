@@ -13,7 +13,7 @@
 import {ref} from 'vue'
 import Dialog from '../components/dialog.vue'
 
-const dialogVisible = ref(true);
+const dialogVisible = ref(false);
 const HandleClose = () => {
   dialogVisible.value = false
 }

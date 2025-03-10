@@ -18,6 +18,7 @@ import imgEight from '@/assets/x2/media_eight.webp';
 import imgNine from '@/assets/x2/fengmianOne.png';
 import imgTen from '@/assets/x2/fengmianTwo.png';
 import imgEleven from '@/assets/x2/fengmianThree.png';
+import imgTwelve from '@/assets/x2/fengmianTwelve.png';
 // import imgNine from '@/assets/x2/media_nine.webp';
 
 // // 使用数组存储每个按钮的状态
@@ -46,6 +47,12 @@ const slidesArr = [
     description: 'ALAYA AI, a trailblazer in distributed artificial intelligence data platforms, is thrilled to introduce its groundbreaking platform that seamlessly integrates data collection, annotation, and social commerce.', 
     image: imgTwo,
     link: 'https://medium.com/@alaya-ai/revolutionizing-ai-alaya-ais-vision-for-a-sustainable-community-business-ecosystem-b8e36291bf2f'
+  },
+  {
+    title: 'Innovate, Integrate, Iterate Introducing Alaya Ai Pro',
+    description: 'Get ready for advanced Web3-native data labelling! After months of development and testing, we are proud to announce the upcoming release of Alaya AI Pro…',
+    image: imgTwelve,
+    link:'https://medium.com/@alaya-ai/innovate-integrate-iterate-introducing-alaya-ai-pro-290af15a652e'
   },
   
 ];
@@ -124,9 +131,12 @@ const videoList = [
     image: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*lQP0TIBKqBYb2kshTaQb9A.png',
     link:'https://medium.com/@alaya-ai/alaya-data-collection-and-labeling-services-all-in-one-solution-81ac88776364'
   },
- 
-
-  
+  {
+    title: 'Innovate, Integrate, Iterate Introducing Alaya Ai Pro',
+    time: 'March 10, 2025',
+    image: imgTwelve,
+    link:'https://medium.com/@alaya-ai/innovate-integrate-iterate-introducing-alaya-ai-pro-290af15a652e'
+  },
 ]
 
 

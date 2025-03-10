@@ -31,6 +31,7 @@ import {useRouter} from 'vue-router';
 
 gsap.registerPlugin(ScrollTrigger)
 
+
 const router = useRouter()
 
 const threeImg = [{img: imageLable, txt: 'Image', desc: 'Labelling'},
@@ -645,6 +646,9 @@ onUnmounted(() => {
   box-sizing: border-box;
   padding-top: 88px;
   transition: padding-top 0.3s ease;
+  background: linear-gradient(to bottom, white 20%, transparent 33%);
+  background-size: 100%;
+  background-position: 0 0;
 }
 
 .home.expanded {
@@ -1130,6 +1134,7 @@ onUnmounted(() => {
 
 .pointer_arrow {
   margin-left: 6px;
+  margin-top: 3px;
 }
 
 .four_img_one {
@@ -2146,6 +2151,7 @@ onUnmounted(() => {
 
   .home_five {
     pointer-events: none;
+
     .five_img_box_small {
       gap: 20px;
     }

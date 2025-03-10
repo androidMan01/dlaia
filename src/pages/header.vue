@@ -1,15 +1,16 @@
 <script setup>
-import {onMounted, onUnmounted, ref} from 'vue'
+import gsap from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {onMounted, onUnmounted, ref, watch} from 'vue'
 import aiaLogo from '@/assets/x2/aia_logo.png'
 import arrowDown from '@/assets/arrow-right.svg'
 import alayaPro from '@/assets/x2/aia_pro_normal.png'
-import alayaProHover from '@/assets/x2/aia_pro_hover.png'
 import alayaProNormal from '@/assets/x2/aia_pro_normal.png'
 import menu from '@/assets/small/menu.png'
 import close from '@/assets/small/close.png'
 
 import {useRouter} from 'vue-router';
-
+gsap.registerPlugin(ScrollTrigger)
 // 导入 epic-spinners 组件
 import {HalfCircleSpinner} from 'epic-spinners'
 
@@ -54,6 +55,8 @@ const toggleCommunity = (show) => {
   }
 }
 
+
+
 const goAialaya = () => {
   // window.open('https://www.aialaya.io/web/alaya/game.html', '_blank');
 }
@@ -76,6 +79,67 @@ const goAgt = () => {
 
 const menuHeight = ref(0)
 const menuContentRef = ref(null)
+
+const platform_bottm = ref(null); // 获取 DOM 元素的引用
+// 监听 isVisible 的变化
+watch(platformShow, (newVal) => {
+  if (newVal) {
+    // 显示时执行动画
+    gsap.fromTo(
+        platform_bottm.value,
+        {opacity: 0, y: -50}, // 初始状态
+        {opacity: 1, y: 0, duration: 0.2} // 结束状态
+    );
+  } else {
+    // 隐藏时执行动画
+    gsap.to(platform_bottm.value, {
+      opacity: 0,
+      y: -50,
+      duration: 0.2,
+    });
+  }
+});
+
+const media_bottm = ref(null); // 获取 DOM 元素的引用
+// 监听 isVisible 的变化
+watch(mediaShow, (newVal) => {
+  if (newVal) {
+    // 显示时执行动画
+    gsap.fromTo(
+        media_bottm.value,
+        {opacity: 0, y: -50}, // 初始状态
+        {opacity: 1, y: 0, duration: 0.2} // 结束状态
+    );
+  } else {
+    // 隐藏时执行动画
+    gsap.to(media_bottm.value, {
+      opacity: 0,
+      y: -50,
+      duration: 0.2,
+    });
+  }
+});
+
+const community_bottm = ref(null); // 获取 DOM 元素的引用
+// 监听 isVisible 的变化
+watch(communityShow, (newVal) => {
+  if (newVal) {
+    // 显示时执行动画
+    gsap.fromTo(
+        community_bottm.value,
+        {opacity: 0, y: -50}, // 初始状态
+        {opacity: 1, y: 0, duration: 0.2} // 结束状态
+    );
+  } else {
+    // 隐藏时执行动画
+    gsap.to(community_bottm.value, {
+      opacity: 0,
+      y: -50,
+      duration: 0.2,
+    });
+  }
+});
+
 
 // 计算菜单实际高度
 onMounted(() => {
@@ -207,7 +271,7 @@ onUnmounted(() => {
   })
 })
 
-const selectedRouter =""
+const selectedRouter = ""
 </script>
 
 <template>
@@ -226,14 +290,18 @@ const selectedRouter =""
             <!--            <span :style="{ color: platformShow ? '#1ae28e' : '' }">Platform</span>-->
             <span class="com-font-color font16 ">Platform</span>
             <img class="platform_arrow" :class="{ 'arrow_rotate': platformShow }" :src="arrowDown" alt="">
-            <div class="platform_bottm" :class="{'menu-visible':platformShow}">
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 2 }" @click="selectItem(2)">Data Annotation</div>
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 3 }" @click="selectItem(3)">Open Data Platform</div>
+            <div ref="platform_bottm" class="platform_bottm" v-show="platformShow">
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 2 }" @click="selectItem(2)">Data
+                Annotation
+              </div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 3 }" @click="selectItem(3)">Open
+                Data Platform
+              </div>
             </div>
           </div>
         </div>
         <div class="ai-auto-labelling margin_right pointer_txt" @click="toggleAuto">
-          <span class="com-font-color font16 " :class="{active: selectedIndex === 4 }" >AI Auto-Labelling</span>
+          <span class="com-font-color font16 " :class="{active: selectedIndex === 4 }">AI Auto-Labelling</span>
         </div>
         <div class="media margin_right pointer_txt" style="position: relative;">
           <div class="media_wrapper"
@@ -241,9 +309,14 @@ const selectedRouter =""
                @mouseleave="toggleMedia(false)">
             <span class="com-font-color font16 ">Media</span>
             <img class="media_arrow" :class="{ 'arrow_rotate': mediaShow }" :src="arrowDown" alt="">
-            <div class="media_bottm" :class="{'menu-visible':mediaShow}">
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 5 }" @click="selectItem(5)">Medium</div>
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 6 }"  @click="selectItem(6)">Video Tutorials</div>
+            <div ref="media_bottm" class="media_bottm" v-show="mediaShow">
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 5 }" @click="selectItem(5)">
+                Medium
+              </div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 6 }" @click="selectItem(6)">
+                Video
+                Tutorials
+              </div>
             </div>
           </div>
         </div>
@@ -255,9 +328,13 @@ const selectedRouter =""
                @mouseleave="toggleCommunity(false)">
             <span class="com-font-color font16 ">Community</span>
             <img class="community_arrow" :class="{ 'arrow_rotate': communityShow }" :src="arrowDown" alt="">
-            <div class="community_bottm" :class="{'menu-visible':communityShow}">
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 7 }"  @click="selectItem(7)">Twitter/X</div>
-              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 8 }"  @click="selectItem(8)">Telegram</div>
+            <div ref="community_bottm"  class="community_bottm" v-show="communityShow">
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 7 }" @click="selectItem(7)">
+                Twitter/X
+              </div>
+              <div class="pla_btm_two pointer_txt" :class="{ active: selectedIndex === 8 }" @click="selectItem(8)">
+                Telegram
+              </div>
             </div>
           </div>
         </div>
@@ -290,18 +367,18 @@ const selectedRouter =""
             <img :class="{ 'rotate': menuStates.platform }" src="@/assets/small/arrow_right.png" alt="">
           </div>
           <div class="menu_content" v-show="menuStates.platform">
-<!--            <div class="menu_sub_item" style="display: flex; align-items: center;">-->
-<!--              <img style="width: 20px;" src="@/assets/small/tree.png" alt="">-->
-<!--              <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Features</span>-->
-<!--            </div>-->
-<!--            <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
-              <div class="menu_sub_item" @click="selectItem(2)" :class="{ active: selectedIndex === 2 }">Data
-                Annotation
-              </div>
-              <div class="menu_sub_item" @click="selectItem(3)" :class="{ active: selectedIndex === 3 }">Open Data
-                Platform
-              </div>
-<!--            </div>-->
+            <!--            <div class="menu_sub_item" style="display: flex; align-items: center;">-->
+            <!--              <img style="width: 20px;" src="@/assets/small/tree.png" alt="">-->
+            <!--              <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Features</span>-->
+            <!--            </div>-->
+            <!--            <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
+            <div class="menu_sub_item" @click="selectItem(2)" :class="{ active: selectedIndex === 2 }">Data
+              Annotation
+            </div>
+            <div class="menu_sub_item" @click="selectItem(3)" :class="{ active: selectedIndex === 3 }">Open Data
+              Platform
+            </div>
+            <!--            </div>-->
           </div>
         </div>
         <div class="menu_item" @click="toggleAuto" :class="{ 'active': selectedIndex === 4 }">AI Auto-Labelling</div>
@@ -312,16 +389,16 @@ const selectedRouter =""
           </div>
           <div class="menu_content" v-show="menuStates.media">
             <div class="menu_content" v-show="menuStates.media">
-<!--              <div class="menu_sub_item" style="display: flex; align-items: center;">-->
-<!--                <img style="width: 20px;" src="@/assets/small/qizhi.png" alt="">-->
-<!--                <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Latest Information</span>-->
-<!--              </div>-->
-<!--              <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
-                <div class="menu_sub_item" @click="selectItem(5)" :class="{ active: selectedIndex === 5 }">Medium</div>
-                <div class="menu_sub_item" @click="selectItem(6)" :class="{ active: selectedIndex === 6 }">Video
-                  Tutorials
-                </div>
-<!--              </div>-->
+              <!--              <div class="menu_sub_item" style="display: flex; align-items: center;">-->
+              <!--                <img style="width: 20px;" src="@/assets/small/qizhi.png" alt="">-->
+              <!--                <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Latest Information</span>-->
+              <!--              </div>-->
+              <!--              <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
+              <div class="menu_sub_item" @click="selectItem(5)" :class="{ active: selectedIndex === 5 }">Medium</div>
+              <div class="menu_sub_item" @click="selectItem(6)" :class="{ active: selectedIndex === 6 }">Video
+                Tutorials
+              </div>
+              <!--              </div>-->
 
             </div>
           </div>
@@ -334,14 +411,14 @@ const selectedRouter =""
             <img class="" :class="{ 'rotate': menuStates.doc }" src="@/assets/small/arrow_right.png" alt="">
           </div>
           <div class="menu_content" v-show="menuStates.doc">
-<!--            <div class="menu_sub_item" style="display: flex; align-items: center;">-->
-<!--              <img style="width: 20px;" src="@/assets/x2/jiangbei.png" alt="">-->
-<!--              <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Follow Us</span>-->
-<!--            </div>-->
-<!--            <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
-              <div class="menu_sub_item" @click="selectItem(7)" :class="{ active: selectedIndex === 7 }">Twitter/X</div>
-              <div class="menu_sub_item" @click="selectItem(8)" :class="{ active: selectedIndex === 8 }">Telegram</div>
-<!--            </div>-->
+            <!--            <div class="menu_sub_item" style="display: flex; align-items: center;">-->
+            <!--              <img style="width: 20px;" src="@/assets/x2/jiangbei.png" alt="">-->
+            <!--              <span style="margin-left: 10px; color: #0a091c; font-weight: 700; font-family: 'Arial';">Follow Us</span>-->
+            <!--            </div>-->
+            <!--            <div style="margin-left: 10px; border-left: 1px solid #1ae28e; padding-left: 20px;">-->
+            <div class="menu_sub_item" @click="selectItem(7)" :class="{ active: selectedIndex === 7 }">Twitter/X</div>
+            <div class="menu_sub_item" @click="selectItem(8)" :class="{ active: selectedIndex === 8 }">Telegram</div>
+            <!--            </div>-->
           </div>
         </div>
 
@@ -446,7 +523,9 @@ const selectedRouter =""
   color: #1ae28e;
 }
 
-.media_arrow {
+.platform_arrow,
+.media_arrow,
+.community_arrow {
   margin-left: calc(5px * v-bind(scale));
   width: calc(8px * v-bind(scale));
   transition: transform 0.2s ease;
@@ -458,11 +537,6 @@ const selectedRouter =""
 
 .agt:hover {
   color: #1ae28e;
-}
-
-.community_arrow {
-  width: calc(8px * v-bind(scale));
-  transition: transform 0.3s ease;
 }
 
 .arrow_rotate {
@@ -513,8 +587,9 @@ const selectedRouter =""
 
 .pla_btm_two {
   padding-top: calc(10px * v-bind(scale));
-  font-size: calc(14px * v-bind(scale));
+  font-size: calc(16px * v-bind(scale));
 }
+
 
 .pla_btm_two:hover {
   color: #45da95;
@@ -768,28 +843,30 @@ const selectedRouter =""
 }
 
 .platform_wrapper,
-.media_wrapper {
+.media_wrapper,
+.community_wrapper {
   position: relative;
   /* padding: 10px 0; */
 }
 
 .platform_wrapper::after,
 .media_wrapper::after,
-.community_wrapper::after{
+.community_wrapper::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  height: 45px; /* 创建一个隐形的连接区域 */
+  height: 65px; /* 创建一个隐形的连接区域 */
   background: transparent;
 }
 
+
 .platform_bottm,
 .media_bottm,
-.community_bottm{
+.community_bottm {
   position: absolute;
-  top: calc(100%);/* 最终状态：滑入到原始位置 */
+  top: calc(100% + 35px); /* 最终状态：滑入到原始位置 */
   left: 0;
   color: #000;
   width: 221px;
@@ -800,13 +877,13 @@ const selectedRouter =""
   box-shadow: 0 2px 21px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
 
-  opacity: 0; /* 初始状态：完全透明 */
+  opacity: 1; /* 初始状态：完全透明 */
   transition: opacity 0.5s ease, top 0.5s ease; /* 添加过渡效果 */
 }
 
 .menu-visible {
   opacity: 1; /* 最终状态：完全不透明 */
-  top: calc(100% + 35px);/* 最终状态：滑入到原始位置 */
+  top: calc(100% + 35px); /* 最终状态：滑入到原始位置 */
 }
 
 
@@ -816,13 +893,6 @@ const selectedRouter =""
 .fade-enter-from,
 .fade-leave-to {
   display: none;
-}
-
-.community_wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
 
@@ -875,9 +945,10 @@ const selectedRouter =""
     margin-right: 0;
   }
 
-  .header_container{
+  .header_container {
     background-color: #fff;
   }
+
   .mobile_active {
     background-color: #fff;
   }

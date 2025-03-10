@@ -251,7 +251,7 @@ onMounted(() => {
   justify-content: center;
   padding-bottom: 50px;
   background: url('@/assets/x2/form_bg.png') no-repeat center;
-  background-size: auto 100%;
+  background-size: 100% 100%;
 }
 
 .form_container {
