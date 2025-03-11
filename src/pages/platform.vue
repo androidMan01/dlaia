@@ -61,31 +61,31 @@ onMounted(() => {
   const isMobile = window.innerWidth <= 768 || /mobile/i.test(navigator.userAgent);
   if (!isMobile) {
     // 为 platform_two 添加动画
-    gsap.set('.gsap_platform_two', {
-      opacity: 0,
-      y: 200,
-      force3D: true
-    })
+    // gsap.set('.gsap_platform_two', {
+    //   opacity: 0,
+    //   y: 200,
+    //   force3D: true
+    // })
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '.gsap_platform_two',
-        start: " 85%",
-        once: true,
-        markers: false
-      }
-    }).to('.gsap_platform_two', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    })
-    // 为 platform_two 添加动画
-    gsap.set('.platform_form', {
-      opacity: 0,
-      y: 100,
-      force3D: true
-    })
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.gsap_platform_two',
+    //     start: " 85%",
+    //     once: true,
+    //     markers: false
+    //   }
+    // }).to('.gsap_platform_two', {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 0.8,
+    //   ease: "power2.out"
+    // })
+    // // 为 platform_two 添加动画
+    // gsap.set('.platform_form', {
+    //   opacity: 0,
+    //   y: 100,
+    //   force3D: true
+    // })
 
     gsap.timeline({
       scrollTrigger: {

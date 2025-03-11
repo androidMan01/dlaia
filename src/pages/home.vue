@@ -374,13 +374,12 @@ onUnmounted(() => {
           <div class="home_title_text_ly">
             <img class="home_one_ri_small" :src="homeOneRi" alt="">
             <div class="home_one_title">
-              <span class="home_one_title_span">OPAN,COMPOSABLE WEB3 AI DATA</span> <br>
+              <span class="home_one_title_span">OPEN,COMPOSABLE WEB3 AI DATA</span> <br>
               <span class="home_one_title_span">INFRASTRUCTURE EMPOWERING</span><br>
               <span class="home_one_title_span">THE WEB3 AI REVOLUTION</span>
             </div>
             <div class="home_one_title_small">
-                <span class="home_one_title_span">Open, Composable Web3 Al Data Infrastructure Empowering the Web3 AI
-                    Revolution</span>
+                <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
             </div>
             <div class="home_one_txt">
               <div class="slider-container">
@@ -1388,9 +1387,9 @@ onUnmounted(() => {
 }
 
 .home_seven_bg {
-  width: 600px;
+  width: 400px;
   position: absolute;
-  top: -200px;
+  top: -150px;
   right: 160px;
 }
 
@@ -1719,6 +1718,7 @@ onUnmounted(() => {
     .three_content_title {
       padding-left: 30px;
       padding-right: 30px;
+      padding-top: 15px;
     }
 
     .three_content_img_box {
