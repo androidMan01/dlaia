@@ -372,7 +372,7 @@ onUnmounted(() => {
       <div class="home_one_image">
         <div class="home_text_content">
           <div class="home_title_text_ly">
-            <img class="home_one_ri_small" :src="homeOneRi" alt="">
+            <div class="home_one_ri_small" ></div>
             <div class="home_one_title">
               <span class="home_one_title_span">OPEN,COMPOSABLE WEB3 AI DATA</span> <br>
               <span class="home_one_title_span">INFRASTRUCTURE EMPOWERING</span><br>
@@ -1100,8 +1100,12 @@ onUnmounted(() => {
 
 .home_four {
   color: #515151;
-  background: white linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf) no-repeat bottom;
-  background-size: 100% 334px;
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #c3ffdf),
+  url('@/assets/x2/home_two_bg.png'),
+  #ffffff;
+  background-position: bottom, center calc(200px * v-bind(scale)), top;
+  background-size: 100% 334px, 100% auto,  cover;
+  background-repeat: no-repeat;
 }
 
 .four_border_left {
@@ -1201,7 +1205,6 @@ onUnmounted(() => {
   font-family: 'Abril';
   color: #0a091c;
   font-size: 50px;
-  padding-top: 20px;
 }
 
 
@@ -2344,11 +2347,20 @@ onUnmounted(() => {
 }
 
 /* 优化图片容器 */
-.four_img_one,
-.four_img_two,
+.four_img_one {
+  overflow: hidden;
+  margin-top: -100px;
+}
+
+.four_img_two {
+  overflow: hidden;
+  margin-top: -70px;
+}
+
 .four_img_three {
   overflow: hidden;
 }
+
 
 
 /* 添加图片悬停效果 */

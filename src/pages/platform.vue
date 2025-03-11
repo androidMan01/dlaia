@@ -163,6 +163,10 @@ const handleFormSubmit = async (formData) => {
         Your One-Stop Web3<br>
         Custom Data Solution
       </div>
+      <div class="platform_txt_sub">Alaya AI’s Open Data Platform is designed to directly connect AI developers with
+        distributed data labellers through custom data pools and custom token rewards, enabling peer-to-peer (P2P) data
+        liquidity with minimal transactional friction.
+      </div>
       <div class="platform_one_btn_border">
         <div class="platform_one_btn"
              @mouseenter="toggleWaitlist(true)"
@@ -182,7 +186,8 @@ const handleFormSubmit = async (formData) => {
       <img class="gsap_platform_two" style="width: 100%;" src="@/assets/x2/platform_bot.png" alt="">
     </div>
     <div class="platform_three">
-      <div class="platform_three_container" v-for="(item, index) in arrImg" :key="index">
+      <div class="platform_three_top_txt">Tokenising data through customisable Web3 incentives</div>
+      <div class="platform_three_container" :class="{'platform_three_container-first':0===index}" v-for="(item, index) in arrImg" :key="index">
         <img class="paltform_icon" src="@/assets/x1/paltform_icon.png" alt="">
 
         <div>
@@ -232,7 +237,18 @@ const handleFormSubmit = async (formData) => {
   line-height: 1.5;
   color: #3d3d3d;
   padding-top: calc(20px * v-bind(scale));
-  padding-bottom: calc(150px * v-bind(scale));
+  padding-bottom: calc(20px * v-bind(scale));
+}
+
+.platform_txt_sub {
+  font-family: 'Arial';
+  font-size: calc(20px * v-bind(scale));
+  line-height: 1.5;
+  color: #3d3d3d;
+  width: calc(600px * v-bind(scale));
+  padding-top: calc(20px * v-bind(scale));
+  padding-bottom: calc(20px * v-bind(scale));
+  text-align: center;
 }
 
 .platform_container {
@@ -246,9 +262,9 @@ const handleFormSubmit = async (formData) => {
 .platform_one {
 }
 
-.platform_one_btn_border{
+.platform_one_btn_border {
   background: linear-gradient(to left, #91f8ff, #79ff62fb);
-  margin-bottom: calc(140px * v-bind(scale));
+  margin-bottom: calc(120px * v-bind(scale));
   margin-top: calc(60px * v-bind(scale));
   padding: 3px;
   border-radius: 50px;
@@ -287,14 +303,34 @@ const handleFormSubmit = async (formData) => {
   margin: 0 auto;
 }
 
+
+
 .platform_three {
   padding-bottom: 110px;
   background: linear-gradient(to bottom, #38f3c1, #1ae28e) no-repeat bottom;
-  background-size: 100% calc(100% - 300px);
+  background-size: 100% calc(100% - 360px * v-bind(scale));
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 
+  .platform_three_top_txt {
+    font-family: 'Abril';
+    font-weight: 700;
+    font-size: calc(36px * v-bind(scale));
+    color: #1ae28e;
+    padding-bottom: calc(30px * v-bind(scale));
+    width: 1080px;
+    margin-top: calc(80px * v-bind(scale));
+  }
+
+  .platform_three_container-first {
+    max-width: 1000px;
+    display: flex;
+    padding: calc(40px * v-bind(scale));
+    background-color: #151334;
+    border-radius: calc(20px * v-bind(scale));
+    margin-top: 0 !important;
+  }
 
   .platform_three_container {
     max-width: 1000px;
@@ -341,6 +377,7 @@ const handleFormSubmit = async (formData) => {
   }
 }
 
+
 /* 响应式断点调整 */
 @media screen and (max-width: 1440px) {
 
@@ -352,6 +389,26 @@ const handleFormSubmit = async (formData) => {
     --subtitle-size: 30px;
     --content-size: 18px;
   } */
+}
+
+@media screen and (max-width: 1080px) {
+  /* :root {
+    --title-size: 60px;
+    --subtitle-size: 30px;
+    --content-size: 18px;
+  } */
+  .platform_three{
+    .platform_three_top_txt {
+      font-family: 'Abril';
+      font-weight: 700;
+      font-size: calc(36px * v-bind(scale));
+      color: #1ae28e;
+      padding-bottom: calc(30px * v-bind(scale));
+      width: 100%;
+      margin-top: calc(120px * v-bind(scale));
+    }
+
+  }
 }
 
 @media screen and (max-width: 719px) {
@@ -388,10 +445,10 @@ const handleFormSubmit = async (formData) => {
     background-repeat: no-repeat;
   }
 
-  .platform_one_btn_border{
+  .platform_one_btn_border {
     background: linear-gradient(to left, #91f8ff, #79ff62fb);
-    margin-bottom: calc(80px * v-bind(scale));
-    margin-top: calc(190px * v-bind(scale));
+    margin-bottom: calc(120px * v-bind(scale));
+    margin-top: calc(20px * v-bind(scale));
     padding: 1px;
     border-radius: 50px;
   }
@@ -414,10 +471,23 @@ const handleFormSubmit = async (formData) => {
 
   }
 
+  .platform_txt_sub{
+    font-family: 'Arial';
+    font-size: 10px;
+    line-height: 1.5;
+    color: #3d3d3d;
+    width: 200px;
+    padding-top: calc(20px * v-bind(scale));
+    padding-bottom: calc(20px * v-bind(scale));
+    text-align: center;
+  }
+
   .platform_three {
     padding-bottom: 70px;
     background: linear-gradient(to bottom, #38f3c1, #1ae28e) no-repeat bottom;
-    background-size: 100% calc(100% - 50px);
+    background-size: 100% calc(100% - 120px);
+
+
 
     .green_line {
       right: 20px;

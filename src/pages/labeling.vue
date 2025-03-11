@@ -114,9 +114,9 @@ onUnmounted(() => {
         <div class="labeling_one_txt_mobile">
           Data auto-labelling is the next stage of
           self-supervised Al evolution <br>
-          <span class="labeling_one_txt_mobile_txt"> Unlock the true potential of Al and turbocharge
+          <div class="labeling_one_txt_mobile_txt"> Unlock the true potential of Al and turbocharge
                     your data efficiency with our proprietary
-                    Al auto-labelling technologies.</span>
+                    Al auto-labelling technologies.</div>
         </div>
         <div class="labeling_one_txt">
                     <span style="padding-bottom: 100px;">
@@ -126,6 +126,11 @@ onUnmounted(() => {
           <span class="labeling_one_txt_txt"> Unlock the true potential of Al and turbocharge
                     your data efficiency with our proprietary Al auto-labelling technologies.</span>
         </div>
+        <div class="labeling_one_txt_sub">
+          <div class="labeling_one_txt_sub_txt">Web3 solution for AI data auto-labelling</div>
+          <img class="labeling_one_sub_img" src="@/assets/x2/label_sub_btn.png">
+        </div>
+
 
       </div>
       <div class="labeling_bot_box">
@@ -153,6 +158,9 @@ onUnmounted(() => {
       </div>
     </div>
     <div class="labeling_three">
+      <div class="home_three_circle_small"></div>
+      <div class="home_three_circle_middle"></div>
+      <div class="home_three_circle_big"></div>
       <div class="labeling_three_container">
         <div class="labeling_three_title">Case example: Automatic facial recognition</div>
         <img class="labeling_three_img" src="@/assets/x2/labeling_three.png" alt="">
@@ -181,11 +189,12 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.labeling_box{
-  background: url('@/assets/x2/labeling_one_bg.png') no-repeat top , #FFFFFF ;
-  background-size: 100% auto ,100% 100% ;
+.labeling_box {
+  background: url('@/assets/x2/labeling_one_bg.png') no-repeat top, #FFFFFF;
+  background-size: 100% auto, 100% 100%;
   padding-top: calc(84px * v-bind(scale) + 80px);
 }
+
 .box_top {
   padding-top: calc(84px * v-bind(scale));
 }
@@ -201,7 +210,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   width: 1000px;
-  padding: calc(100px * v-bind(scale)) 0 calc(200px * v-bind(scale)) 0;
+  padding: calc(100px * v-bind(scale)) 0 calc(100px * v-bind(scale)) 0;
 }
 
 .labeling_bot_box {
@@ -237,6 +246,26 @@ onUnmounted(() => {
   padding: calc(20px * v-bind(scale)) calc(100px * v-bind(scale)) calc(20px * v-bind(scale)) calc(20px * v-bind(scale));
 }
 
+.labeling_one_txt_sub {
+  width: calc(600px * v-bind(scale));
+  padding: calc(20px * v-bind(scale)) calc(120px * v-bind(scale)) calc(20px * v-bind(scale)) 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.labeling_one_txt_sub_txt{
+  font-size: calc(20px * v-bind(scale));
+  padding: calc(10px * v-bind(scale)) calc(20px * v-bind(scale)) calc(10px * v-bind(scale)) calc(20px * v-bind(scale));
+  color: white;
+  background: #5150e7;
+  border-radius: 5px;
+  width: max-content;
+}
+.labeling_one_sub_img{
+  width: calc(150px * v-bind(scale));
+  margin-top: 20px;
+}
+
 .labeling_one_txt_txt {
   display: block;
   line-height: 1.8;
@@ -257,7 +286,7 @@ onUnmounted(() => {
   position: relative;
   width: 80%;
   max-width: 1000px;
-  padding: calc(40px * v-bind(scale)) 0;
+  padding: 0 0 calc(40px * v-bind(scale)) 0;
 }
 
 .labeling_two_title {
@@ -271,7 +300,8 @@ onUnmounted(() => {
   width: 100%;
   object-fit: contain;
 }
-.labeling_two_img_mobile{
+
+.labeling_two_img_mobile {
   width: 100%;
   object-fit: contain;
   display: none;
@@ -305,15 +335,58 @@ onUnmounted(() => {
   object-fit: contain;
 }
 
-.labeling_two_icon_mobile{
+.labeling_two_icon_mobile {
   display: none;
 }
 
 .labeling_three {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to bottom, #01052d, #121a2a);
+}
+
+.home_three_circle_small {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: calc(80px * v-bind(scale));
+  height: calc(80px * v-bind(scale));
+  border-radius: 50%;
+  background-image: linear-gradient(225deg,
+  rgba(50, 255, 184, 0.44),
+  rgba(182, 32, 224, 0.04) 30%,
+  rgba(182, 32, 224, 0.04) 70%,
+  rgba(247, 181, 0, 0.19));
+}
+
+.home_three_circle_middle {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  width: calc(94px * v-bind(scale));
+  height: calc(94px * v-bind(scale));
+  border-radius: 50%;
+  background-image: linear-gradient(225deg,
+  rgba(50, 255, 184, 0.44),
+  rgba(182, 32, 224, 0.04) 30%,
+  rgba(182, 32, 224, 0.04) 70%,
+  rgba(247, 181, 0, 0.19));
+}
+
+.home_three_circle_big {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: calc(264px * v-bind(scale));
+  height: calc(264px * v-bind(scale));
+  border-radius: 50%;
+  background-image: linear-gradient(225deg,
+  rgba(50, 255, 184, 0.44),
+  rgba(182, 32, 224, 0.04) 30%,
+  rgba(182, 32, 224, 0.04) 70%,
+  rgba(247, 181, 0, 0.19));
 }
 
 .labeling_three_container {
@@ -385,7 +458,14 @@ onUnmounted(() => {
   padding: 10px;
   font-size: 10px;
   color: #5d5d5b;
+  font-weight: 700;
+  line-height: 1.5;
   font-family: Arial;
+}
+
+.labeling_one_txt_mobile_txt{
+  font-weight: normal;
+  margin-top: 5px;
 }
 
 /* 响应式断点调整 */
@@ -406,17 +486,40 @@ onUnmounted(() => {
 }
 
 @media screen and (max-width: 480px) {
-  .labeling_box{
+  .labeling_box {
     padding-top: 60px;
   }
+
   .box_top {
     padding-top: 60px;
   }
+
   .labeling_one {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  .labeling_one_txt_sub {
+    width: 270px;
+    padding: 5px calc(120px * v-bind(scale)) calc(20px * v-bind(scale)) 0;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .labeling_one_txt_sub_txt{
+    font-size: 10px;
+    padding: 5px 10px;
+    color: white;
+    background: #5150e7;
+    border-radius: 2px;
+    width: max-content;
+  }
+  .labeling_one_sub_img{
+    width: 80px;
+    margin-top: 5px;
+  }
+
   .labeling_two {
     padding-bottom: 50px;
   }
@@ -481,7 +584,8 @@ onUnmounted(() => {
     object-fit: contain;
     display: none;
   }
-  .labeling_two_img_mobile{
+
+  .labeling_two_img_mobile {
     width: 100%;
     object-fit: contain;
     display: block;
@@ -500,7 +604,7 @@ onUnmounted(() => {
     font-size: 9px;
   }
 
-  .labeling_two_icon{
+  .labeling_two_icon {
     display: none;
   }
 
@@ -511,6 +615,50 @@ onUnmounted(() => {
     width: calc(100px * v-bind(scale));
     object-fit: contain;
     display: block;
+  }
+
+
+
+  .home_three_circle_small {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: calc(80px * v-bind(scale));
+    height: calc(80px * v-bind(scale));
+    border-radius: 50%;
+    background-image: linear-gradient(225deg,
+    rgba(50, 255, 184, 0.44),
+    rgba(182, 32, 224, 0.04) 30%,
+    rgba(182, 32, 224, 0.04) 70%,
+    rgba(247, 181, 0, 0.19));
+  }
+
+  .home_three_circle_middle {
+    position: absolute;
+    top: 56%;
+    left: 5%;
+    width: calc(100px * v-bind(scale));
+    height: calc(100px * v-bind(scale));
+    border-radius: 50%;
+    background-image: linear-gradient(225deg,
+    rgba(50, 255, 184, 0.44),
+    rgba(182, 32, 224, 0.04) 30%,
+    rgba(182, 32, 224, 0.04) 70%,
+    rgba(247, 181, 0, 0.19));
+  }
+
+  .home_three_circle_big {
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    width: calc(264px * v-bind(scale));
+    height: calc(264px * v-bind(scale));
+    border-radius: 50%;
+    background-image: linear-gradient(225deg,
+    rgba(50, 255, 184, 0.44),
+    rgba(182, 32, 224, 0.04) 30%,
+    rgba(182, 32, 224, 0.04) 70%,
+    rgba(247, 181, 0, 0.19));
   }
   /* .labeling_one_txt_mobile_txt {
     font-size: 7px;
