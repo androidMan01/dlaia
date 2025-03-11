@@ -1389,8 +1389,8 @@ onUnmounted(() => {
 .home_seven_bg {
   width: 400px;
   position: absolute;
-  top: -150px;
-  right: 160px;
+  top: -50px;
+  right: 200px;
 }
 
 .home_seven_img {

@@ -443,7 +443,7 @@ onUnmounted(() => {
   }
 
   .media_box {
-    padding-top: 0;
+    padding-top: 60px;
   }
 }
 
