@@ -1833,7 +1833,7 @@ onUnmounted(() => {
     .home_one_image {
       background-image: url('@/assets/home-one-bga.png');
       background-size: 100% auto;
-      background-position: top;
+      background-position: center -15px;
       background-repeat: no-repeat;
       margin-top: -60px;
       position: relative;

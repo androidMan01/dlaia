@@ -501,7 +501,7 @@ onUnmounted(() => {
   }
 
   .labeling_one_txt_sub {
-    width: 270px;
+    width: 290px;
     padding: 5px calc(120px * v-bind(scale)) calc(20px * v-bind(scale)) 0;
     display: flex;
     flex-flow: column;
@@ -513,7 +513,7 @@ onUnmounted(() => {
     color: white;
     background: #5150e7;
     border-radius: 2px;
-    width: max-content;
+    width: 100%;
   }
   .labeling_one_sub_img{
     width: 80px;
@@ -549,6 +549,7 @@ onUnmounted(() => {
   /* 显示元素 */
   .labeling_one_title_mobile {
     font-size: 50px;
+    font-family: 'Abril';
   }
 
   .labeling_one_title_mobile_box {
