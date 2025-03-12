@@ -286,7 +286,7 @@ onUnmounted(() => {
   position: relative;
   width: 80%;
   max-width: 1000px;
-  padding: 0 0 calc(40px * v-bind(scale)) 0;
+  padding: calc(40px * v-bind(scale)) 0 calc(40px * v-bind(scale)) 0;
 }
 
 .labeling_two_title {

@@ -404,7 +404,7 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="home_one_ri_ly">
-            <img class="home_one_ri" :src="homeOneRi" alt="">
+
           </div>
         </div>
         <div class="home_num_box">
@@ -1393,7 +1393,7 @@ onUnmounted(() => {
   width: 400px;
   position: absolute;
   top: -50px;
-  right: 200px;
+  left: 50%;
 }
 
 .home_seven_img {
