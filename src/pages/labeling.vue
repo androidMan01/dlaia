@@ -127,7 +127,7 @@ onUnmounted(() => {
                     your data efficiency with our proprietary Al auto-labelling technologies.</span>
         </div>
         <div class="labeling_one_txt_sub">
-          <div class="labeling_one_txt_sub_txt">Web3 solution for AI data auto-labelling</div>
+          <div class="labeling_one_txt_sub_txt">Your all-in-one Web3 data auto-labelling solution.</div>
           <img class="labeling_one_sub_img" src="@/assets/x2/label_sub_btn.png">
         </div>
 
@@ -514,6 +514,8 @@ onUnmounted(() => {
     background: #5150e7;
     border-radius: 2px;
     width: 100%;
+    text-align: justify;
+    text-align-last: justify;
   }
   .labeling_one_sub_img{
     width: 80px;
