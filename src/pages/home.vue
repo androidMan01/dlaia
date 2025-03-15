@@ -10,7 +10,6 @@ import textLable from '@/assets/x2/text-lable.png';
 import autoLable from '@/assets/x2/auto-lable.png';
 import defaultGoogel from '@/assets/x2/googel_normal.png'
 import hoverGoogel from '@/assets/x2/googel_hover.png'
-import homeOneRi from '@/assets/x2/home_one_ri.png'
 
 import arbitrum_logo from '@/assets/logo_lunbo/arbitrum_logo.png'
 // import binance_logo from '@/assets/logo_lunbo/binance_logo.png'
@@ -372,14 +371,87 @@ onUnmounted(() => {
       <div class="home_one_image">
         <div class="home_text_content">
           <div class="home_title_text_ly">
-            <div class="home_one_ri_small" ></div>
+            <div class="home_one_ri_small"></div>
             <div class="home_one_title">
-              <span class="home_one_title_span">OPEN,COMPOSABLE WEB3 AI DATA</span> <br>
-              <span class="home_one_title_span">INFRASTRUCTURE EMPOWERING</span><br>
-              <span class="home_one_title_span">THE WEB3 AI REVOLUTION</span>
+              <div class="home_one_title_span_slide_in">
+                <span>O</span>
+                <span>P</span>
+                <span>E</span>
+                <span>N</span>
+                <span>,</span>
+                <span>C</span>
+                <span>O</span>
+                <span>M</span>
+                <span>P</span>
+                <span>O</span>
+                <span>S</span>
+                <span>A</span>
+                <span>B</span>
+                <span>L</span>
+                <span>E</span>
+                <span>&nbsp;</span>
+                <span>A</span>
+                <span>I</span>
+                <span>&nbsp;</span>
+                <span>D</span>
+                <span>A</span>
+                <span>T</span>
+                <span>A</span>
+              </div>
+              <div class="home_one_title_span_slide_in_two">
+                <span>I</span>
+                <span>N</span>
+                <span>F</span>
+                <span>R</span>
+                <span>A</span>
+                <span>S</span>
+                <span>T</span>
+                <span>R</span>
+                <span>U</span>
+                <span>C</span>
+                <span>T</span>
+                <span>U</span>
+                <span>R</span>
+                <span>E</span>
+                <span>&nbsp;</span>
+                <span>E</span>
+                <span>M</span>
+                <span>P</span>
+                <span>O</span>
+                <span>W</span>
+                <span>E</span>
+                <span>R</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+              </div>
+              <div class="home_one_title_span_slide_in_three">
+                <span>T</span>
+                <span>H</span>
+                <span>E</span>
+                <span>&nbsp;</span>
+                <span>W</span>
+                <span>E</span>
+                <span>B</span>
+                <span>3</span>
+                <span>&nbsp;</span>
+                <span>A</span>
+                <span>I</span>
+                <span>&nbsp;</span>
+                <span>R</span>
+                <span>E</span>
+                <span>V</span>
+                <span>O</span>
+                <span>L</span>
+                <span>U</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+               </div>
             </div>
             <div class="home_one_title_small">
-                <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
+              <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
             </div>
             <div class="home_one_txt">
               <div class="slider-container">
@@ -404,6 +476,16 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="home_one_ri_ly">
+            <div class="video_parent" data-framer-name="Orb" name="Orb"><!--$-->
+              <video
+                  class="video_style"
+                  src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/a7f3c287ba3fd02f0b84a995eb5dfce3.mp4" loop=""
+                  preload="auto"
+                  poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/a7f3c287ba3fd02f0b84a995eb5dfce3.mp4"
+                  muted=""
+                  playsinline=""
+                  autoplay=""></video>
+            </div>
 
           </div>
         </div>
@@ -659,7 +741,7 @@ onUnmounted(() => {
 }
 
 .home_one_image {
-  background: url('@/assets/home-one-bgi.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+  background: url('@/assets/home-one-bgii.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
   background-size: 100% auto, 100% 293px;
   margin-top: calc(-100px * v-bind(scale));
   padding-top: calc(100px * v-bind(scale));
@@ -700,6 +782,27 @@ onUnmounted(() => {
 .home_one_ri_ly {
   flex: 10;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video_parent {
+  width: 450px;
+  height: 450px;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+.video_style {
+  cursor: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  display: block;
+  object-fit: cover;
+  background-color: rgba(255, 0, 0, 0);
+  object-position: 50% 50%;
+  mix-blend-mode: darken;
 }
 
 .home_one_ri_small {
@@ -716,12 +819,372 @@ onUnmounted(() => {
   color: #515151;
 }
 
+.home_one_title_span_slide_in {
+  color: #515151;
+  overflow: hidden; /* 隐藏超出容器的内容 */
+  white-space: nowrap; /* 防止文本换行 */
+}
+
+.home_one_title_span_slide_in span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-100%); /* 初始位置在左侧外部 */
+  animation: slideIn 0.5s forwards; /* 动画效果 */
+}
+
+.home_one_title_span_slide_in_two {
+  color: #515151;
+  overflow: hidden; /* 隐藏超出容器的内容 */
+  white-space: nowrap; /* 防止文本换行 */
+  animation: blink 0.4s 4.6s 1; /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */
+}
+
+.home_one_title_span_slide_in_two span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-100%); /* 初始位置在左侧外部 */
+  animation: slideIn 0.5s forwards; /* 动画效果 */
+}
+
+.home_one_title_span_slide_in_three {
+  color: #515151;
+  overflow: hidden; /* 隐藏超出容器的内容 */
+  white-space: nowrap; /* 防止文本换行 */
+  animation: blink 0.4s 3.8s 2; /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */
+}
+
+.home_one_title_span_slide_in_three span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-100%); /* 初始位置在左侧外部 */
+  animation: slideIn 0.5s forwards; /* 动画效果 */
+}
+
+/* 为每个字母设置不同的动画延迟 */
+.home_one_title_span_slide_in span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.home_one_title_span_slide_in span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.home_one_title_span_slide_in span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.home_one_title_span_slide_in span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.home_one_title_span_slide_in span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.home_one_title_span_slide_in span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.home_one_title_span_slide_in span:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.home_one_title_span_slide_in span:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.home_one_title_span_slide_in span:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.home_one_title_span_slide_in span:nth-child(10) {
+  animation-delay: 1.0s;
+}
+
+.home_one_title_span_slide_in span:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.home_one_title_span_slide_in span:nth-child(12) {
+  animation-delay: 1.2s;
+}
+
+.home_one_title_span_slide_in span:nth-child(13) {
+  animation-delay: 1.3s;
+}
+
+.home_one_title_span_slide_in span:nth-child(14) {
+  animation-delay: 1.4s;
+}
+
+.home_one_title_span_slide_in span:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
+.home_one_title_span_slide_in span:nth-child(16) {
+  animation-delay: 1.6s;
+}
+
+.home_one_title_span_slide_in span:nth-child(17) {
+  animation-delay: 1.7s;
+}
+
+.home_one_title_span_slide_in span:nth-child(18) {
+  animation-delay: 1.8s;
+}
+
+.home_one_title_span_slide_in span:nth-child(19) {
+  animation-delay: 1.9s;
+}
+
+.home_one_title_span_slide_in span:nth-child(20) {
+  animation-delay: 2.0s;
+}
+
+.home_one_title_span_slide_in span:nth-child(21) {
+  animation-delay: 2.1s;
+}
+
+.home_one_title_span_slide_in span:nth-child(22) {
+  animation-delay: 2.2s;
+}
+
+.home_one_title_span_slide_in span:nth-child(23) {
+  animation-delay: 2.3s;
+}
+
+
+
+/* 为每个字母设置不同的动画延迟 */
+.home_one_title_span_slide_in_two span:nth-child(1) {
+  animation-delay: 1.1s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(3) {
+  animation-delay: 1.3s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(6) {
+  animation-delay: 1.6s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(7) {
+  animation-delay: 1.7s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(8) {
+  animation-delay: 1.8s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(9) {
+  animation-delay: 1.9s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(10) {
+  animation-delay: 2.0s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(11) {
+  animation-delay: 2.1s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(12) {
+  animation-delay: 2.2s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(13) {
+  animation-delay: 2.3s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(14) {
+  animation-delay: 2.4s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(15) {
+  animation-delay: 2.5s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(16) {
+  animation-delay: 2.6s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(17) {
+  animation-delay: 2.7s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(18) {
+  animation-delay: 2.8s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(19) {
+  animation-delay: 2.9s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(20) {
+  animation-delay: 3.0s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(21) {
+  animation-delay: 3.1s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(22) {
+  animation-delay: 3.2s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(23) {
+  animation-delay: 3.3s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(24) {
+  animation-delay: 3.4s;
+}
+
+.home_one_title_span_slide_in_two span:nth-child(25) {
+  animation-delay: 3.5s;
+}
+
+
+
+
+
+/* 为每个字母设置不同的动画延迟 */
+.home_one_title_span_slide_in_three span:nth-child(1) {
+  animation-delay: 2.0s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(2) {
+  animation-delay: 2.05s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(3) {
+  animation-delay: 2.1s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(4) {
+  animation-delay: 2.15s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(5) {
+  animation-delay: 2.2s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(6) {
+  animation-delay: 2.25s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(7) {
+  animation-delay: 2.3s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(8) {
+  animation-delay: 2.35s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(9) {
+  animation-delay: 2.4s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(10) {
+  animation-delay: 2.45s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(11) {
+  animation-delay: 2.5s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(12) {
+  animation-delay: 2.55s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(13) {
+  animation-delay: 2.6s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(14) {
+  animation-delay: 2.65s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(15) {
+  animation-delay: 2.7s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(16) {
+  animation-delay: 2.75s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(17) {
+  animation-delay: 2.8s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(18) {
+  animation-delay: 2.8s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(19) {
+  animation-delay: 2.9s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(20) {
+  animation-delay: 3.0s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(21) {
+  animation-delay: 3.1s;
+}
+
+.home_one_title_span_slide_in_three span:nth-child(22) {
+  animation-delay: 3.2s;
+}
+
+
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* 最终位置在正常位置 */
+  }
+}
+
+/* 闪烁动画 */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* 完全不透明 */
+  }
+  50% {
+    opacity: 0; /* 完全透明 */
+  }
+}
+
 .home_one_txt {
   padding-top: 60px;
   font-size: 16px;
   display: flex;
   flex-flow: column nowrap;
   align-items: end;
+  transform: translateX(-100%);
+  animation: homeOneSlideIn 1s 4.8s forwards; /* 应用动画 */
+}
+
+@keyframes homeOneSlideIn {
+  0% {
+    transform: translateX(-100%); /* 从左侧外部开始 */
+  }
+  100% {
+    transform: translateX(0); /* 移动到正常位置 */
+  }
 }
 
 .slider-container {
@@ -731,6 +1194,7 @@ onUnmounted(() => {
 
 .slider-content {
   display: flex;
+
   width: calc(500px * 4);
   animation: slide 8s infinite;
 }
@@ -754,16 +1218,16 @@ onUnmounted(() => {
 /* 定义滚动动画 */
 @keyframes slide {
   0%, 25% {
-    transform: translateX(0);
+    transform: translateX(-1500px);
   }
   33%, 58% {
-    transform: translateX(-500px);
-  }
-  66%, 91% {
     transform: translateX(-1000px);
   }
+  66%, 91% {
+    transform: translateX(-500px);
+  }
   100% {
-    transform: translateX(-1500px);
+    transform: translateX(0);
   }
 }
 
@@ -1104,7 +1568,7 @@ onUnmounted(() => {
   url('@/assets/x2/home_two_bg.png'),
   #ffffff;
   background-position: bottom, center calc(200px * v-bind(scale)), top;
-  background-size: 100% 334px, 100% auto,  cover;
+  background-size: 100% 334px, 100% auto, cover;
   background-repeat: no-repeat;
 }
 
@@ -2360,7 +2824,6 @@ onUnmounted(() => {
 .four_img_three {
   overflow: hidden;
 }
-
 
 
 /* 添加图片悬停效果 */
