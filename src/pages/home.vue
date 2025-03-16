@@ -52,36 +52,6 @@ const goAialaya = () => {
 }
 
 
-const videoList = ref([
-  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/zheng.mp4',
-  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/fan.mp4',
-  // 添加更多视频 URL
-]);
-
-const videoSrc = ref([
-  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg',
-  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/fan.jpg',
-  // 添加更多视频 URL
-]);
-
-// 当前播放的视频索引
-const currentIndex = ref(0);
-
-// 当前播放的视频 URL
-const currentVideo = ref(videoList.value[currentIndex.value]);
-const currentVideoSrc = ref(videoSrc.value[currentIndex.value]);
-// 获取 video 元素
-const videoPlayer = ref(null);
-
-// 播放下一个视频
-const playNextVideo = () => {
-  currentIndex.value = (currentIndex.value + 1) % videoList.value.length; // 循环播放
-  currentVideo.value = videoList.value[currentIndex.value]; // 更新视频 URL
-  videoPlayer.value.load(); // 重新加载视频
-  videoPlayer.value.play(); // 播放视频
-};
-
-
 // 添加轮播控制
 const logos = ref([
   arbitrum_logo,
@@ -185,9 +155,28 @@ const updateScale = () => {
   scale.value = Math.min(width / baseWidth, 1) // 限制最大缩放为1
 }
 
+
+const texts = ref([
+  'Distributed Al Data Ecosystems',
+  'Web3 Custom Data Pools',
+  'Data Auto-labelling Toolsets',
+]);
+const currentIndex = ref(0);
+const transitionName = ref('slide-left'); // 默认动画方向
+
+// 定时切换文本
+let interval;
+const startCarousel = () => {
+  interval = setInterval(() => {
+    transitionName.value = 'slide-left'; // 设置动画方向为左侧滑入
+    currentIndex.value = (currentIndex.value + 1) % texts.value.length;
+  }, 5000); // 每 6 秒切换一次
+};
+
+
 onMounted(() => {
-  updateScale()
-  videoPlayer.value.play();
+  startCarousel();
+  updateScale();
   if (logoContainer.value) {
     animate()
   }
@@ -386,6 +375,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  clearInterval(interval);
   if (animationRef.value) {
     cancelAnimationFrame(animationRef.value)
   }
@@ -486,12 +476,21 @@ onUnmounted(() => {
               <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
             </div>
             <div class="home_one_txt">
-              <div class="slider-container">
-                <div class="slider-content">
-                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">
-                    {{ item }}
+<!--              <div class="slider-container">-->
+<!--                <div class="slider-content">-->
+<!--                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">-->
+<!--                    {{ item }}-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+              <div class="carousel-container">
+                <!-- 使用 transition 组件实现滑入滑出和淡入淡出 -->
+                <transition :name="transitionName" mode="out-in">
+                  <div :key="currentIndex" class="carousel-text">
+                    {{ texts[currentIndex] }}
                   </div>
-                </div>
+                </transition>
               </div>
             </div>
             <div class="home_one_txt_small">
@@ -510,14 +509,14 @@ onUnmounted(() => {
           <div class="home_one_ri_ly">
             <div class="video_parent" data-framer-name="Orb" name="Orb"><!--$-->
               <video
-                  ref="videoPlayer"
+                  ref="videoPlayerHeader"
                   class="video_style"
-                  :src="currentVideo"
+                  src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
                   preload="auto"
-                  :poster="currentVideoSrc"
+                  poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
                   muted=""
                   playsinline=""
-                  @ended="playNextVideo"
+                  loop
                   autoplay=""></video>
             </div>
           </div>
@@ -781,13 +780,99 @@ onUnmounted(() => {
 }
 
 .home_one_title {
-  font-family: 'Abril';
+  font-family: 'Arial Black', sans-serif; /* 使用定义的字体 */
   font-size: 38px;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 900;
   text-align: right;
   letter-spacing: 0.76px;
   line-height: 1.6;
+}
+
+.carousel-container {
+  width: calc(150%);
+  margin-right: -50%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.carousel-text {
+  text-align: right;
+  position: absolute;
+  background-image: radial-gradient(circle at 51% 50%, #59ff2e, rgba(98, 230, 255, 0.98) 100%);
+  background-size: 60% 100%; /* 宽度 60%，高度 100% */
+  background-position: left; /* 背景固定在左侧 */
+  background-repeat: no-repeat; /* 禁止重复 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 33%;
+  font-size: 32px;
+  font-family: 'PingFangSC';
+}
+
+/* 左侧滑入动画 */
+.slide-left-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.slide-left-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left-leave-active {
+  transition: all 1s ease;
+}
+
+.slide-left-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+/* 右侧滑出动画 */
+.slide-right-enter-active {
+  transition: all 0.5s ease;
+}
+
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-right-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-leave-active {
+  transition: all 0.5s ease;
+}
+
+.slide-right-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .home_one_title_small {
@@ -863,7 +948,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: slideInRight 3s forwards; /* 动画效果 */
+  animation: slideInRight 1s forwards; /* 动画效果 */
 }
 
 @keyframes slideInRight {
@@ -879,321 +964,318 @@ onUnmounted(() => {
 .home_one_title_span_slide_in span {
   display: inline-block;
   opacity: 0;
-  transform: translateX(-100%); /* 初始位置在左侧外部 */
-  animation: slideIn 0.5s forwards; /* 动画效果 */
+  animation: slideIn 0.1s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_two {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 4.6s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 2.4s 1.1s forwards; /* 动画效果 */
+  animation: blink 0.4s 2.8s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 1.2s 0.55s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_two span {
   display: inline-block;
   opacity: 0;
-  transform: translateX(-100%); /* 初始位置在左侧外部 */
-  animation: slideIn 0.5s forwards; /* 动画效果 */
+  animation: slideIn 0.1s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_three {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 3.8s 2, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 1.2s 2.0s forwards; /* 动画效果 */
+  animation: blink 0.4s 2s 2, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.75s 1.0s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_three span {
   display: inline-block;
   opacity: 0;
-  transform: translateX(-100%); /* 初始位置在左侧外部 */
-  animation: slideIn 0.5s forwards; /* 动画效果 */
+  animation: slideIn 0.1s forwards; /* 动画效果 */
 }
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in span:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: 0.05s;
 }
 
 .home_one_title_span_slide_in span:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .home_one_title_span_slide_in span:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: 0.15s;
 }
 
 .home_one_title_span_slide_in span:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .home_one_title_span_slide_in span:nth-child(5) {
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
 }
 
 .home_one_title_span_slide_in span:nth-child(6) {
-  animation-delay: 0.6s;
+  animation-delay: 0.3s;
 }
 
 .home_one_title_span_slide_in span:nth-child(7) {
-  animation-delay: 0.7s;
+  animation-delay: 0.35s;
 }
 
 .home_one_title_span_slide_in span:nth-child(8) {
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
 }
 
 .home_one_title_span_slide_in span:nth-child(9) {
-  animation-delay: 0.9s;
+  animation-delay: 0.45s;
 }
 
 .home_one_title_span_slide_in span:nth-child(10) {
-  animation-delay: 1.0s;
+  animation-delay: 0.5s;
 }
 
 .home_one_title_span_slide_in span:nth-child(11) {
-  animation-delay: 1.1s;
+  animation-delay: 0.55s;
 }
 
 .home_one_title_span_slide_in span:nth-child(12) {
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
 }
 
 .home_one_title_span_slide_in span:nth-child(13) {
-  animation-delay: 1.3s;
+  animation-delay: 0.65s;
 }
 
 .home_one_title_span_slide_in span:nth-child(14) {
-  animation-delay: 1.4s;
+  animation-delay: 0.7s;
 }
 
 .home_one_title_span_slide_in span:nth-child(15) {
-  animation-delay: 1.5s;
+  animation-delay: 0.75s;
 }
 
 .home_one_title_span_slide_in span:nth-child(16) {
-  animation-delay: 1.6s;
+  animation-delay: 0.8s;
 }
 
 .home_one_title_span_slide_in span:nth-child(17) {
-  animation-delay: 1.7s;
+  animation-delay: 0.85s;
 }
 
 .home_one_title_span_slide_in span:nth-child(18) {
-  animation-delay: 1.8s;
+  animation-delay: 0.9s;
 }
 
 .home_one_title_span_slide_in span:nth-child(19) {
-  animation-delay: 1.9s;
+  animation-delay: 0.95s;
 }
 
 .home_one_title_span_slide_in span:nth-child(20) {
-  animation-delay: 2.0s;
+  animation-delay: 1.0s;
 }
 
 .home_one_title_span_slide_in span:nth-child(21) {
-  animation-delay: 2.1s;
+  animation-delay: 1.05s;
 }
 
 .home_one_title_span_slide_in span:nth-child(22) {
-  animation-delay: 2.2s;
+  animation-delay: 1.1s;
 }
 
 .home_one_title_span_slide_in span:nth-child(23) {
-  animation-delay: 2.3s;
+  animation-delay: 1.15s;
 }
 
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in_two span:nth-child(1) {
-  animation-delay: 1.1s;
+  animation-delay: 0.55s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(2) {
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(3) {
-  animation-delay: 1.3s;
+  animation-delay: 0.65s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(4) {
-  animation-delay: 1.4s;
+  animation-delay: 0.7s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(5) {
-  animation-delay: 1.5s;
+  animation-delay: 0.75s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(6) {
-  animation-delay: 1.6s;
+  animation-delay: 0.8s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(7) {
-  animation-delay: 1.7s;
+  animation-delay: 0.85s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(8) {
-  animation-delay: 1.8s;
+  animation-delay: 0.9s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(9) {
-  animation-delay: 1.9s;
+  animation-delay: 0.95s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(10) {
-  animation-delay: 2.0s;
+  animation-delay: 1.0s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(11) {
-  animation-delay: 2.1s;
+  animation-delay: 1.05s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(12) {
-  animation-delay: 2.2s;
+  animation-delay: 1.1s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(13) {
-  animation-delay: 2.3s;
+  animation-delay: 1.15s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(14) {
-  animation-delay: 2.4s;
+  animation-delay: 1.2s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(15) {
-  animation-delay: 2.5s;
+  animation-delay: 1.25s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(16) {
-  animation-delay: 2.6s;
+  animation-delay: 1.3s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(17) {
-  animation-delay: 2.7s;
+  animation-delay: 1.35s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(18) {
-  animation-delay: 2.8s;
+  animation-delay: 1.4s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(19) {
-  animation-delay: 2.9s;
+  animation-delay: 1.45s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(20) {
-  animation-delay: 3.0s;
+  animation-delay: 1.5s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(21) {
-  animation-delay: 3.1s;
+  animation-delay: 1.55s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(22) {
-  animation-delay: 3.2s;
+  animation-delay: 1.6s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(23) {
-  animation-delay: 3.3s;
+  animation-delay: 1.65s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(24) {
-  animation-delay: 3.4s;
+  animation-delay: 1.7s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(25) {
-  animation-delay: 3.5s;
+  animation-delay: 1.75s;
 }
 
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in_three span:nth-child(1) {
-  animation-delay: 2.0s;
+  animation-delay: 1.0s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(2) {
-  animation-delay: 2.05s;
+  animation-delay: 1.05s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(3) {
-  animation-delay: 2.1s;
+  animation-delay: 1.1s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(4) {
-  animation-delay: 2.15s;
+  animation-delay: 1.15s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(5) {
-  animation-delay: 2.2s;
+  animation-delay: 1.2s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(6) {
-  animation-delay: 2.25s;
+  animation-delay: 1.25s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(7) {
-  animation-delay: 2.3s;
+  animation-delay: 1.3s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(8) {
-  animation-delay: 2.35s;
+  animation-delay: 1.33s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(9) {
-  animation-delay: 2.4s;
+  animation-delay: 1.36s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(10) {
-  animation-delay: 2.45s;
+  animation-delay: 1.39s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(11) {
-  animation-delay: 2.5s;
+  animation-delay: 1.42s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(12) {
-  animation-delay: 2.55s;
+  animation-delay: 1.45s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(13) {
-  animation-delay: 2.6s;
+  animation-delay: 1.48s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(14) {
-  animation-delay: 2.65s;
+  animation-delay: 1.51s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(15) {
-  animation-delay: 2.7s;
+  animation-delay: 1.54s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(16) {
-  animation-delay: 2.75s;
+  animation-delay: 1.57s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(17) {
-  animation-delay: 2.8s;
+  animation-delay: 1.60s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(18) {
-  animation-delay: 2.8s;
+  animation-delay: 1.63s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(19) {
-  animation-delay: 2.9s;
+  animation-delay: 1.66s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(20) {
-  animation-delay: 3.0s;
+  animation-delay: 1.69s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(21) {
-  animation-delay: 3.1s;
+  animation-delay: 1.72s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(22) {
-  animation-delay: 3.2s;
+  animation-delay: 1.75s;
 }
 
 
@@ -1221,14 +1303,16 @@ onUnmounted(() => {
   flex-flow: column nowrap;
   align-items: end;
   transform: translateX(-100%);
-  animation: homeOneSlideIn 1s 4.8s forwards; /* 应用动画 */
+  animation: homeOneSlideIn 1s 3.6s forwards; /* 应用动画 */
 }
 
 @keyframes homeOneSlideIn {
   0% {
+    opacity: 0;
     transform: translateX(-100%); /* 从左侧外部开始 */
   }
   100% {
+    opacity: 1;
     transform: translateX(0); /* 移动到正常位置 */
   }
 }

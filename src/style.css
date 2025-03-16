@@ -29,6 +29,13 @@ body {
   font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Abril Black';
+    src: url('/fonts/ariblk.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
 .box_top {
   padding-top: 84px;
 }
