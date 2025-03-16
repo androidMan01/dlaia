@@ -51,6 +51,37 @@ const goAialaya = () => {
   window.open('https://www.aialaya.io/web/alaya/game.html', '_blank');
 }
 
+
+const videoList = ref([
+  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/zheng.mp4',
+  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/fan.mp4',
+  // 添加更多视频 URL
+]);
+
+const videoSrc = ref([
+  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg',
+  'https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/fan.jpg',
+  // 添加更多视频 URL
+]);
+
+// 当前播放的视频索引
+const currentIndex = ref(0);
+
+// 当前播放的视频 URL
+const currentVideo = ref(videoList.value[currentIndex.value]);
+const currentVideoSrc = ref(videoSrc.value[currentIndex.value]);
+// 获取 video 元素
+const videoPlayer = ref(null);
+
+// 播放下一个视频
+const playNextVideo = () => {
+  currentIndex.value = (currentIndex.value + 1) % videoList.value.length; // 循环播放
+  currentVideo.value = videoList.value[currentIndex.value]; // 更新视频 URL
+  videoPlayer.value.load(); // 重新加载视频
+  videoPlayer.value.play(); // 播放视频
+};
+
+
 // 添加轮播控制
 const logos = ref([
   arbitrum_logo,
@@ -156,6 +187,7 @@ const updateScale = () => {
 
 onMounted(() => {
   updateScale()
+  videoPlayer.value.play();
   if (logoContainer.value) {
     animate()
   }
@@ -448,7 +480,7 @@ onUnmounted(() => {
                 <span>I</span>
                 <span>O</span>
                 <span>N</span>
-               </div>
+              </div>
             </div>
             <div class="home_one_title_small">
               <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
@@ -478,15 +510,16 @@ onUnmounted(() => {
           <div class="home_one_ri_ly">
             <div class="video_parent" data-framer-name="Orb" name="Orb"><!--$-->
               <video
+                  ref="videoPlayer"
                   class="video_style"
-                  src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/a7f3c287ba3fd02f0b84a995eb5dfce3.mp4" loop=""
+                  :src="currentVideo"
                   preload="auto"
-                  poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/a7f3c287ba3fd02f0b84a995eb5dfce3.mp4"
+                  :poster="currentVideoSrc"
                   muted=""
                   playsinline=""
+                  @ended="playNextVideo"
                   autoplay=""></video>
             </div>
-
           </div>
         </div>
         <div class="home_num_box">
@@ -741,8 +774,8 @@ onUnmounted(() => {
 }
 
 .home_one_image {
-  background: url('@/assets/home-one-bgii.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
-  background-size: 100% auto, 100% 293px;
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom, #FBFFFD;
+  background-size: 100% 293px, 100% 100%;
   margin-top: calc(-100px * v-bind(scale));
   padding-top: calc(100px * v-bind(scale));
 }
@@ -791,12 +824,19 @@ onUnmounted(() => {
   height: 450px;
   margin-right: 100px;
   margin-top: 30px;
+  background-image: url('@/assets/home-one-video-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video_style {
   cursor: auto;
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
   border-radius: 0px;
   display: block;
   object-fit: cover;
@@ -823,7 +863,18 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
+  animation: slideInRight 3s forwards; /* 动画效果 */
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 
 .home_one_title_span_slide_in span {
   display: inline-block;
@@ -836,7 +887,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 4.6s 1; /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */
+  animation: blink 0.4s 4.6s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 2.4s 1.1s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_two span {
@@ -850,7 +901,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 3.8s 2; /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */
+  animation: blink 0.4s 3.8s 2, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 1.2s 2.0s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_three span {
@@ -952,7 +1003,6 @@ onUnmounted(() => {
 .home_one_title_span_slide_in span:nth-child(23) {
   animation-delay: 2.3s;
 }
-
 
 
 /* 为每个字母设置不同的动画延迟 */
@@ -1057,9 +1107,6 @@ onUnmounted(() => {
 }
 
 
-
-
-
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in_three span:nth-child(1) {
   animation-delay: 2.0s;
@@ -1148,7 +1195,6 @@ onUnmounted(() => {
 .home_one_title_span_slide_in_three span:nth-child(22) {
   animation-delay: 3.2s;
 }
-
 
 
 @keyframes slideIn {
