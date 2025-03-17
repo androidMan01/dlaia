@@ -170,7 +170,7 @@ const startCarousel = () => {
   interval = setInterval(() => {
     transitionName.value = 'slide-left'; // 设置动画方向为左侧滑入
     currentIndex.value = (currentIndex.value + 1) % texts.value.length;
-  }, 5000); // 每 6 秒切换一次
+  }, 3000); // 每 6 秒切换一次
 };
 
 
@@ -819,7 +819,7 @@ onUnmounted(() => {
 
 /* 左侧滑入动画 */
 .slide-left-enter-active {
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .slide-left-enter-from {
@@ -833,17 +833,15 @@ onUnmounted(() => {
 }
 
 .slide-left-leave-active {
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .slide-left-leave-from {
   opacity: 1;
-  transform: translateX(0);
 }
 
 .slide-left-leave-to {
   opacity: 0;
-  transform: translateX(50%);
 }
 
 /* 右侧滑出动画 */
@@ -905,8 +903,8 @@ onUnmounted(() => {
 }
 
 .video_parent {
-  width: 450px;
-  height: 450px;
+  width: 550px;
+  height: 550px;
   margin-right: 100px;
   margin-top: 30px;
   background-image: url('@/assets/home-one-video-bg.png');
@@ -948,7 +946,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: slideInRight 1s forwards; /* 动画效果 */
+  animation: slideInRight 0.7s forwards; /* 动画效果 */
 }
 
 @keyframes slideInRight {
@@ -971,7 +969,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 2.8s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 1.2s 0.55s forwards; /* 动画效果 */
+  animation: blink 0.2s 2.1s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.9s 0.48s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_two span {
@@ -984,7 +982,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.4s 2s 2, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.75s 1.0s forwards; /* 动画效果 */
+  animation: blink 0.2s 1.5s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.4s 0.9s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_three span {
@@ -995,287 +993,287 @@ onUnmounted(() => {
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in span:nth-child(1) {
-  animation-delay: 0.05s;
+  animation-delay: 0.03s;
 }
 
 .home_one_title_span_slide_in span:nth-child(2) {
-  animation-delay: 0.1s;
+  animation-delay: 0.06s;
 }
 
 .home_one_title_span_slide_in span:nth-child(3) {
-  animation-delay: 0.15s;
+  animation-delay: 0.09s;
 }
 
 .home_one_title_span_slide_in span:nth-child(4) {
-  animation-delay: 0.2s;
+  animation-delay: 0.12s;
 }
 
 .home_one_title_span_slide_in span:nth-child(5) {
-  animation-delay: 0.25s;
+  animation-delay: 0.15s;
 }
 
 .home_one_title_span_slide_in span:nth-child(6) {
-  animation-delay: 0.3s;
+  animation-delay: 0.18s;
 }
 
 .home_one_title_span_slide_in span:nth-child(7) {
-  animation-delay: 0.35s;
+  animation-delay: 0.21s;
 }
 
 .home_one_title_span_slide_in span:nth-child(8) {
-  animation-delay: 0.4s;
+  animation-delay: 0.24s;
 }
 
 .home_one_title_span_slide_in span:nth-child(9) {
-  animation-delay: 0.45s;
+  animation-delay: 0.27s;
 }
 
 .home_one_title_span_slide_in span:nth-child(10) {
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 
 .home_one_title_span_slide_in span:nth-child(11) {
-  animation-delay: 0.55s;
+  animation-delay: 0.33s;
 }
 
 .home_one_title_span_slide_in span:nth-child(12) {
-  animation-delay: 0.6s;
+  animation-delay: 0.36s;
 }
 
 .home_one_title_span_slide_in span:nth-child(13) {
-  animation-delay: 0.65s;
+  animation-delay: 0.39s;
 }
 
 .home_one_title_span_slide_in span:nth-child(14) {
-  animation-delay: 0.7s;
+  animation-delay: 0.42s;
 }
 
 .home_one_title_span_slide_in span:nth-child(15) {
-  animation-delay: 0.75s;
+  animation-delay: 0.45s;
 }
 
 .home_one_title_span_slide_in span:nth-child(16) {
-  animation-delay: 0.8s;
+  animation-delay: 0.48s;
 }
 
 .home_one_title_span_slide_in span:nth-child(17) {
-  animation-delay: 0.85s;
+  animation-delay: 0.51s;
 }
 
 .home_one_title_span_slide_in span:nth-child(18) {
-  animation-delay: 0.9s;
+  animation-delay: 0.54s;
 }
 
 .home_one_title_span_slide_in span:nth-child(19) {
-  animation-delay: 0.95s;
+  animation-delay: 0.57s;
 }
 
 .home_one_title_span_slide_in span:nth-child(20) {
-  animation-delay: 1.0s;
+  animation-delay: 0.6s;
 }
 
 .home_one_title_span_slide_in span:nth-child(21) {
-  animation-delay: 1.05s;
+  animation-delay: 0.63s;
 }
 
 .home_one_title_span_slide_in span:nth-child(22) {
-  animation-delay: 1.1s;
+  animation-delay: 0.66s;
 }
 
 .home_one_title_span_slide_in span:nth-child(23) {
-  animation-delay: 1.15s;
+  animation-delay: 0.69s;
 }
 
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in_two span:nth-child(1) {
-  animation-delay: 0.55s;
+  animation-delay: 0.48s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(2) {
-  animation-delay: 0.6s;
+  animation-delay: 0.52s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(3) {
-  animation-delay: 0.65s;
+  animation-delay: 0.56s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(4) {
-  animation-delay: 0.7s;
+  animation-delay: 0.61s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(5) {
-  animation-delay: 0.75s;
+  animation-delay: 0.65s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(6) {
-  animation-delay: 0.8s;
+  animation-delay: 0.69s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(7) {
-  animation-delay: 0.85s;
+  animation-delay: 0.74s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(8) {
-  animation-delay: 0.9s;
+  animation-delay: 0.78s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(9) {
-  animation-delay: 0.95s;
+  animation-delay: 0.82s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(10) {
-  animation-delay: 1.0s;
+  animation-delay: 0.86s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(11) {
-  animation-delay: 1.05s;
+  animation-delay: 0.9s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(12) {
-  animation-delay: 1.1s;
+  animation-delay: 0.94s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(13) {
-  animation-delay: 1.15s;
+  animation-delay: 0.98s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(14) {
-  animation-delay: 1.2s;
+  animation-delay: 1.02s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(15) {
-  animation-delay: 1.25s;
+  animation-delay: 1.06s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(16) {
-  animation-delay: 1.3s;
+  animation-delay: 1.1s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(17) {
-  animation-delay: 1.35s;
+  animation-delay: 1.14s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(18) {
-  animation-delay: 1.4s;
+  animation-delay: 1.18s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(19) {
-  animation-delay: 1.45s;
+  animation-delay: 1.22s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(20) {
-  animation-delay: 1.5s;
+  animation-delay: 1.24s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(21) {
-  animation-delay: 1.55s;
+  animation-delay: 1.28s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(22) {
-  animation-delay: 1.6s;
+  animation-delay: 1.32s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(23) {
-  animation-delay: 1.65s;
+  animation-delay: 1.36s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(24) {
-  animation-delay: 1.7s;
+  animation-delay: 1.4s;
 }
 
 .home_one_title_span_slide_in_two span:nth-child(25) {
-  animation-delay: 1.75s;
+  animation-delay: 1.44s;
 }
 
 
 /* 为每个字母设置不同的动画延迟 */
 .home_one_title_span_slide_in_three span:nth-child(1) {
-  animation-delay: 1.0s;
+  animation-delay: 0.9s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(2) {
-  animation-delay: 1.05s;
+  animation-delay: 0.92s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(3) {
-  animation-delay: 1.1s;
+  animation-delay: 0.94s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(4) {
-  animation-delay: 1.15s;
+  animation-delay: 0.96s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(5) {
-  animation-delay: 1.2s;
+  animation-delay: 0.98s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(6) {
-  animation-delay: 1.25s;
+  animation-delay: 1s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(7) {
-  animation-delay: 1.3s;
+  animation-delay: 1.02s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(8) {
-  animation-delay: 1.33s;
+  animation-delay: 1.04s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(9) {
-  animation-delay: 1.36s;
+  animation-delay: 1.06s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(10) {
-  animation-delay: 1.39s;
+  animation-delay: 1.08s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(11) {
-  animation-delay: 1.42s;
+  animation-delay: 1.1s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(12) {
-  animation-delay: 1.45s;
+  animation-delay: 1.12s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(13) {
-  animation-delay: 1.48s;
+  animation-delay: 1.14s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(14) {
-  animation-delay: 1.51s;
+  animation-delay: 1.16s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(15) {
-  animation-delay: 1.54s;
+  animation-delay: 1.18s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(16) {
-  animation-delay: 1.57s;
+  animation-delay: 1.2s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(17) {
-  animation-delay: 1.60s;
+  animation-delay: 1.22s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(18) {
-  animation-delay: 1.63s;
+  animation-delay: 1.24s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(19) {
-  animation-delay: 1.66s;
+  animation-delay: 1.26s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(20) {
-  animation-delay: 1.69s;
+  animation-delay: 1.28s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(21) {
-  animation-delay: 1.72s;
+  animation-delay: 1.30s;
 }
 
 .home_one_title_span_slide_in_three span:nth-child(22) {
-  animation-delay: 1.75s;
+  animation-delay: 1.32s;
 }
 
 
@@ -1303,7 +1301,7 @@ onUnmounted(() => {
   flex-flow: column nowrap;
   align-items: end;
   transform: translateX(-100%);
-  animation: homeOneSlideIn 1s 3.6s forwards; /* 应用动画 */
+  animation: homeOneSlideIn 0.5s 2.5s forwards; /* 应用动画 */
 }
 
 @keyframes homeOneSlideIn {
