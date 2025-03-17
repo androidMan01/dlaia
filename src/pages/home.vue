@@ -969,7 +969,7 @@ onUnmounted(() => {
   color: #515151;
   overflow: hidden; /* 隐藏超出容器的内容 */
   white-space: nowrap; /* 防止文本换行 */
-  animation: blink 0.2s 2.1s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.9s 0.48s forwards; /* 动画效果 */
+  animation: blink 0.2s 1.9s 1, /* 闪烁动画，延迟 2 秒开始，闪烁 2 次 */ slideInRight 0.9s 0.48s forwards; /* 动画效果 */
 }
 
 .home_one_title_span_slide_in_two span {
