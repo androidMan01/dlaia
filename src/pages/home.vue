@@ -1301,7 +1301,7 @@ onUnmounted(() => {
   flex-flow: column nowrap;
   align-items: end;
   transform: translateX(-100%);
-  animation: homeOneSlideIn 0.5s 2.5s forwards; /* 应用动画 */
+  animation: homeOneSlideIn 0.5s 2.1s forwards; /* 应用动画 */
 }
 
 @keyframes homeOneSlideIn {
