@@ -393,7 +393,20 @@ onUnmounted(() => {
       <div class="home_one_image">
         <div class="home_text_content">
           <div class="home_title_text_ly">
-            <div class="home_one_ri_small"></div>
+            <div class="home_one_ri_small">
+              <div class="video_parent_small" data-framer-name="Orb" name="Orb"><!--$-->
+                <video
+                    ref="videoPlayerHeader"
+                    class="video_style_small"
+                    src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
+                    preload="auto"
+                    poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
+                    muted=""
+                    playsinline=""
+                    loop
+                    autoplay=""></video>
+              </div>
+            </div>
             <div class="home_one_title">
               <div class="home_one_title_span_slide_in">
                 <span>O</span>
@@ -476,13 +489,13 @@ onUnmounted(() => {
               <span class="home_one_title_span">OPEN, COMPOSABLE WEB3 AI DATA INFRASTRUCTURE EMPOWERING THE WEB3 AI REVOLUTION</span>
             </div>
             <div class="home_one_txt">
-<!--              <div class="slider-container">-->
-<!--                <div class="slider-content">-->
-<!--                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">-->
-<!--                    {{ item }}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
+              <!--              <div class="slider-container">-->
+              <!--                <div class="slider-content">-->
+              <!--                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">-->
+              <!--                    {{ item }}-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--              </div>-->
 
               <div class="carousel-container">
                 <!-- 使用 transition 组件实现滑入滑出和淡入淡出 -->
@@ -494,12 +507,20 @@ onUnmounted(() => {
               </div>
             </div>
             <div class="home_one_txt_small">
-              <div class="slider-container">
-                <div class="slider-content">
-                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">
-                    {{ item }}
+<!--              <div class="slider-container">-->
+<!--                <div class="slider-content">-->
+<!--                  <div v-for="(item, index) in home_one_words" :key="index" class="slider-item">-->
+<!--                    {{ item }}-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+              <div class="carousel-container">
+                <!-- 使用 transition 组件实现滑入滑出和淡入淡出 -->
+                <transition :name="transitionName" mode="out-in">
+                  <div :key="currentIndex" class="carousel-text">
+                    {{ texts[currentIndex] }}
                   </div>
-                </div>
+                </transition>
               </div>
             </div>
             <div class="home_one_btn">
@@ -2134,8 +2155,8 @@ onUnmounted(() => {
   }
 
   .home_one_image {
-    background: url('@/assets/home-one-bgi.png') no-repeat top, linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
-    background-size: 100% auto, 100% 293px;
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #e4fff1) no-repeat bottom;
+    background-size: 100% 293px;
     margin-top: calc(-100px * v-bind(scale));
     padding-top: calc(100px * v-bind(scale));
   }
@@ -2162,9 +2183,31 @@ onUnmounted(() => {
 
   .home_one_ri_small {
     display: block;
-    width: 150px;
-    height: 150px;
-    margin-left: 63%;
+    width: 180px;
+    height: 180px;
+    margin-left: calc(50% - 90px);
+  }
+
+  .video_parent_small {
+    width: 100%;
+    height: 100%;
+    background-image: url('@/assets/home-one-video-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .video_style_small {
+    cursor: auto;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+    border-radius: 0px;
+    display: block;
+    object-fit: cover;
+    background-color: rgba(255, 0, 0, 0);
+    object-position: 50% 50%;
+    mix-blend-mode: darken;
   }
 
   .home_text_content {
@@ -2182,7 +2225,7 @@ onUnmounted(() => {
   }
 
   .home_one_title_small {
-    font-family: 'Abril';
+    font-family: 'Arial Black', sans-serif; /* 使用定义的字体 */
     display: block;
     font-size: 30px;
     padding: 0 50px;
@@ -2423,10 +2466,6 @@ onUnmounted(() => {
     padding-top: 20px;
 
     .home_one_image {
-      background-image: url('@/assets/home-one-bga.png');
-      background-size: 100% auto;
-      background-position: center -15px;
-      background-repeat: no-repeat;
       margin-top: -60px;
       position: relative;
     }
@@ -2514,9 +2553,9 @@ onUnmounted(() => {
 
     .home_one_ri_small {
       display: block;
-      width: 120px;
-      height: 120px;
-      margin-left: 48%;
+      width: 140px;
+      height: 140px;
+      margin-left: calc(50% - 70px);
     }
 
     .home_num_box_icon {
@@ -2571,6 +2610,94 @@ onUnmounted(() => {
       max-width: 180px;
     }
 
+  }
+
+  .carousel-container {
+    width: 100%;
+    margin-right: 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+  }
+
+  .carousel-text {
+    text-align: right;
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    background-image: radial-gradient(circle at 51% 50%, #59ff2e, rgba(98, 230, 255, 0.98) 100%);
+    background-size: 100% 100%; /* 宽度 60%，高度 100% */
+    background-position: left; /* 背景固定在左侧 */
+    background-repeat: no-repeat; /* 禁止重复 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 15px;
+    padding-right: 0;
+    font-family: 'PingFangSC';
+  }
+
+  /* 左侧滑入动画 */
+  .slide-left-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-left-enter-from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  .slide-left-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-left-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-left-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-left-leave-to {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  /* 右侧滑出动画 */
+  .slide-right-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-right-enter-from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .slide-right-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-right-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
   }
 
   .home_one_title {
