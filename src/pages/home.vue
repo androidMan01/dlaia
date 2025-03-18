@@ -24,6 +24,8 @@ import kucoin_logo from '@/assets/logo_lunbo/kucoin_logo.png'
 import okx_logo from '@/assets/logo_lunbo/okx-logo.png'
 import five_img from '@/assets/home-five.png'
 
+import home_logos from '@/assets/x2/home_two_logos.png';
+
 import coverImage from '@/assets/x2/home_cover.png'
 import {computed, onMounted, onUnmounted, ref} from 'vue';
 import {useRouter} from 'vue-router';
@@ -608,17 +610,23 @@ onUnmounted(() => {
 
     <div class="home_two">
       <div class="two_logo">
-        <div class="logo_track">
-          <div class="logo_wrapper">
-            <div class="logo_container" ref="logoContainer">
-              <!-- 第一组 logo -->
-              <img v-for="(logo, index) in logos" :key="`first-${index}`" :src="logo" class="logo-item"
-                   alt="partner logo">
-              <!-- 第二组 logo，用于无缝衔接 -->
-              <img v-for="(logo, index) in logos" :key="`second-${index}`" :src="logo" class="logo-item"
-                   alt="partner logo">
-            </div>
-          </div>
+<!--        <div class="logo_track">-->
+<!--          <div class="logo_wrapper">-->
+<!--            <div class="logo_container" ref="logoContainer">-->
+<!--              &lt;!&ndash; 第一组 logo &ndash;&gt;-->
+<!--              <img v-for="(logo, index) in logos" :key="`first-${index}`" :src="logo" class="logo-item"-->
+<!--                   alt="partner logo">-->
+<!--              &lt;!&ndash; 第二组 logo，用于无缝衔接 &ndash;&gt;-->
+<!--              <img v-for="(logo, index) in logos" :key="`second-${index}`" :src="logo" class="logo-item"-->
+<!--                   alt="partner logo">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        <div class="logos-ly">
+          <div class="home_two_title">Trusted by Industry Leaders</div>
+          <div class="home_two_line"></div>
+          <img class="home_two_logos" :src="home_logos" alt=""/>
         </div>
       </div>
       <div class="home_two_contain">
@@ -1527,10 +1535,35 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 115px;
+
   overflow: hidden;
   box-shadow: 0 20px 28px 0 rgba(233, 233, 233, 0.5);
   background-color: #fff;
+}
+
+.logos-ly{
+  width: 100%;
+}
+
+.home_two_title{
+  font-family: Arial;
+  font-size: 36px;
+  color: #1ae28e;
+  padding: 40px 0 25px 0;
+}
+
+.home_two_line{
+  height: 1px;
+  width: 90%;
+  margin-left: 5%;
+  background: #e5e5e5;
+}
+
+.home_two_logos{
+  width: 94%;
+  height: auto;
+  margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 .logo_track {
@@ -2183,9 +2216,9 @@ onUnmounted(() => {
 
   .home_one_ri_small {
     display: block;
-    width: 180px;
-    height: 180px;
-    margin-left: calc(50% - 90px);
+    width: 190px;
+    height: 190px;
+    margin-left: calc(50% - 95px);
   }
 
   .video_parent_small {
@@ -2199,9 +2232,9 @@ onUnmounted(() => {
 
   .video_style_small {
     cursor: auto;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    margin: 5px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 10px;
     border-radius: 0px;
     display: block;
     object-fit: cover;
@@ -2553,9 +2586,9 @@ onUnmounted(() => {
 
     .home_one_ri_small {
       display: block;
-      width: 140px;
-      height: 140px;
-      margin-left: calc(50% - 70px);
+      width: 160px;
+      height: 160px;
+      margin-left: calc(50% - 80px);
     }
 
     .home_num_box_icon {
@@ -2723,10 +2756,34 @@ onUnmounted(() => {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 85px;
     overflow: hidden;
     background-color: #f9f9f9;
     box-shadow: 0 20px 28px 0 #ffffff;
+  }
+
+  .logos-ly{
+    width: 100%;
+  }
+
+  .home_two_title{
+    font-family: Arial;
+    font-size: 16px;
+    color: #1ae28e;
+    padding: 20px 0 12px 0;
+  }
+
+  .home_two_line{
+    height: 1px;
+    width: 94%;
+    margin-left: 3%;
+    background: #e5e5e5;
+  }
+
+  .home_two_logos{
+    width: 94%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 15px;
   }
 
   .home_two_contain {
