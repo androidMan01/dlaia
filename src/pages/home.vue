@@ -1535,32 +1535,31 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   width: 100%;
-
   overflow: hidden;
-  box-shadow: 0 20px 28px 0 rgba(233, 233, 233, 0.5);
   background-color: #fff;
 }
 
 .logos-ly{
   width: 100%;
+  background: #f9f9f9;
 }
 
 .home_two_title{
   font-family: Arial;
-  font-size: 36px;
+  font-size: 32px;
   color: #1ae28e;
   padding: 40px 0 25px 0;
 }
 
 .home_two_line{
   height: 1px;
-  width: 90%;
-  margin-left: 5%;
+  width: 84%;
+  margin-left: 8%;
   background: #e5e5e5;
 }
 
 .home_two_logos{
-  width: 94%;
+  width: 84%;
   height: auto;
   margin-bottom: 40px;
   margin-top: 30px;
@@ -2767,7 +2766,7 @@ onUnmounted(() => {
 
   .home_two_title{
     font-family: Arial;
-    font-size: 16px;
+    font-size: 15px;
     color: #1ae28e;
     padding: 20px 0 12px 0;
   }
