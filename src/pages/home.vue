@@ -70,10 +70,10 @@ const logos = ref([
 ])
 
 const home_one_words = ref([
-  'Distributed Al Data Ecosystems',
+  'Distributed AI Data Ecosystems',
   'Web3 Custom Data Pools',
-  'Data Auto-labelling Toolsets',
-  'Distributed Al Data Ecosystems'
+  'Data Auto-Labelling Toolsets',
+  'Distributed AI Data Ecosystems'
 ]);
 
 
@@ -159,9 +159,9 @@ const updateScale = () => {
 
 
 const texts = ref([
-  'Distributed Al Data Ecosystems',
+  'Distributed AI Data Ecosystems',
   'Web3 Custom Data Pools',
-  'Data Auto-labelling Toolsets',
+  'Data Auto-Labelling Toolsets',
 ]);
 const currentIndex = ref(0);
 const transitionName = ref('slide-left'); // 默认动画方向
@@ -415,7 +415,7 @@ onUnmounted(() => {
                 <span>P</span>
                 <span>E</span>
                 <span>N</span>
-                <span>,</span>
+                <span>,&nbsp;</span>
                 <span>C</span>
                 <span>O</span>
                 <span>M</span>
@@ -631,8 +631,8 @@ onUnmounted(() => {
       </div>
       <div class="home_two_contain">
         <div class="two_txt">
-          <span class="txt_green">Alaya Al </span> is an open, composable Web3 data sampling and
-          auto-labelling Al infrastructure.
+          <span class="txt_green">Alaya AI </span> is an open, composable Web3 data sampling and
+          auto-labelling AI infrastructure.
         </div>
         <div class="two_video">
           <video class="two_video_img" ref="videoPlayer" @play="onPlay" @pause="onPause" playsinline="true"
@@ -656,7 +656,7 @@ onUnmounted(() => {
       <div class="four_item_box">
         <div class="four_item_box_content">
           <div class="gsap_one_title">
-            <div class="four_title">Distributed Al Data Ecosystem</div>
+            <div class="four_title">Distributed AI Data Ecosystem</div>
             <div class="four_txt">Distributed data ecosystems combine the best of Web2 and Web3 into a
               universal platform that allows anyone to monetise idle time by contributing AI data.
             </div>
@@ -712,7 +712,7 @@ onUnmounted(() => {
         <div class="three_title">Multimodal Datasets</div>
 
         <div class="three_content_title">
-          Alaya Al is the first Web3-native Al data platform to support a wide range of Al
+          Alaya AI is the first Web3-native AI data platform to support a wide range of AI
           data to satisfy diverse model training requirements for a global customer base.
         </div>
         <div class="three_content_img_box">

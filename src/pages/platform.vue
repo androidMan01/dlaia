@@ -16,18 +16,18 @@ gsap.registerPlugin(ScrollTrigger)
 
 const arrImg = [{
   img: oneImg,
-  title: 'Dataset bootstrapping for Web3 Al developers',
-  txt: 'Alaya Al\'s Open Data Platform enables customisable dataset bootstrapping for early-stage small-medium Al developers with limited cash funding, either directly on-chain or off-chain.'
+  title: 'Dataset bootstrapping for Web3 AI developers',
+  txt: 'Alaya AI\'s Open Data Platform enables customisable dataset bootstrapping for early-stage small-medium AI developers with limited cash funding, either directly on-chain or off-chain.'
 },
   {
     img: twoImg,
     title: 'Custom token support',
-    txt: 'The Open Data Platform leverages free market dynamics of open data economies to support custom data requests for Al developers through custom token reward pools, similar to a decentralised exchange or an NFT market.'
+    txt: 'The Open Data Platform leverages free market dynamics of open data economies to support custom data requests for AI developers through custom token reward pools, similar to a decentralised exchange or an NFT market.'
   },
   {
     img: threeImg,
-    title: 'Web3 + Al token innovation',
-    txt: 'Custom token rewards improve organic token distribution for Web3 Al projects by aligning user incentives with project ecosystems, enabling simultaneous user acquisition and data collection to incentivise Web3 Al token utility innovation. '
+    title: 'Web3 + AI token innovation',
+    txt: 'Custom token rewards improve organic token distribution for Web3 AI projects by aligning user incentives with project ecosystems, enabling simultaneous user acquisition and data collection to incentivise Web3 AI token utility innovation. '
   }]
 
 const arrowHovered = ref(false)

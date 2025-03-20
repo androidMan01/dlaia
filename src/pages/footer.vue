@@ -274,7 +274,7 @@ onUnmounted(() => {
                 </div>
                 <div class="footer_content_right">
                     <div class="footer_content_right_small">
-                        <div class="title">About Alaya Al</div>
+                        <div class="title">About Alaya AI</div>
                         <div class="guidance pointer_txt" style="display: flex;">
                             <div>
                                 <div class="btm_item pointer_txt" @click="goDistributedData">Distributed Data Ecosystem</div>
@@ -362,7 +362,7 @@ onUnmounted(() => {
     </template>
   </el-dialog>
     <div class="footer_bottom">
-            © 2025 Alaya Al. All Rights Reserved.
+            © 2025 Alaya AI. All Rights Reserved.
         </div>
 </template>
 <style scoped>

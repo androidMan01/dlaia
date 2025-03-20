@@ -170,7 +170,7 @@ onMounted(() => {
               <div class="annotation_list_item_txt">Tackle a diverse variety of
                 multiple-choice questions and
                 earn various token rewards
-                through a simple gamified Ul.
+                through a simple gamified UI.
               </div>
               <img class="annotation_list_arrow" src="@/assets/annotation/arrow.png" alt="">
               <img class="annotation_list_zhuzhi" src="@/assets/annotation/zhuzi.png" alt="">

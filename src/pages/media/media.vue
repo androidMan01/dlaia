@@ -31,7 +31,7 @@ gsap.registerPlugin(ScrollTrigger)
 const slidesArr = [
 
   {
-    title: 'Innovate, Integrate, Iterate Introducing Alaya Ai Pro',
+    title: 'Innovate, Integrate, Iterate Introducing Alaya AI Pro',
     description: 'Get ready for advanced Web3-native data labelling! After months of development and testing, we are proud to announce the upcoming release of Alaya AI Pro…',
     image: imgTwelve,
     link: 'https://medium.com/@alaya-ai/innovate-integrate-iterate-introducing-alaya-ai-pro-290af15a652e'

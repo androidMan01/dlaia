@@ -113,18 +113,18 @@ onUnmounted(() => {
         </div>
         <div class="labeling_one_txt_mobile">
           Data auto-labelling is the next stage of
-          self-supervised Al evolution <br>
-          <div class="labeling_one_txt_mobile_txt"> Unlock the true potential of Al and turbocharge
+          self-supervised AI evolution <br>
+          <div class="labeling_one_txt_mobile_txt"> Unlock the true potential of AI and turbocharge
                     your data efficiency with our proprietary
-                    Al auto-labelling technologies.</div>
+                    AI auto-labelling technologies.</div>
         </div>
         <div class="labeling_one_txt">
                     <span style="padding-bottom: 100px;">
                         Data auto-labelling is the next stage of
-                        self-supervised Al evolution<br>
+                        self-supervised AI evolution<br>
                     </span>
-          <span class="labeling_one_txt_txt"> Unlock the true potential of Al and turbocharge
-                    your data efficiency with our proprietary Al auto-labelling technologies.</span>
+          <span class="labeling_one_txt_txt"> Unlock the true potential of AI and turbocharge
+                    your data efficiency with our proprietary AI auto-labelling technologies.</span>
         </div>
         <div class="labeling_one_txt_sub">
           <div class="labeling_one_txt_sub_txt">Your all-in-one Web3 data auto-labelling solution.</div>
@@ -144,10 +144,10 @@ onUnmounted(() => {
         <img class="labeling_two_img" src="@/assets/x2/labeling_two.png" alt="">
         <img class="labeling_two_img_mobile" src="@/assets/x2/labeling_two_mobile.png" alt="">
         <div class="labeling_two_card">
-                   <span> Alaya Al's auto-labelling toolset automatically
+                   <span> Alaya AI's auto-labelling toolset automatically
                     processes data through a three-step process by
                     applying custom machine learning models to
-                    human labelled datasets. Al labelled data is
+                    human labelled datasets. AI labelled data is
                     validated by expert human auditors and applied
                     for model fine-tuning through HITL to deliver
                     superior auto-labelling results.</span>
@@ -170,7 +170,7 @@ onUnmounted(() => {
                     <span>Our model is capable of identifying and continuously tracking
                             segmented regions of interest (ROls) based on initial object annotation
                             results provided by human labellers. Automatic ROI tracking and
-                            association can be maintained by leveraging Al algorithms with minimal
+                            association can be maintained by leveraging AI algorithms with minimal
                             human intervention for vastly superior annotation efficiency.
                     </span>
         </div>
