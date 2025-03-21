@@ -10,6 +10,7 @@ import textLable from '@/assets/x2/text-lable.png';
 import autoLable from '@/assets/x2/auto-lable.png';
 import defaultGoogel from '@/assets/x2/googel_normal.png'
 import hoverGoogel from '@/assets/x2/googel_hover.png'
+import homeVideo from '@/assets/home_video.png';
 
 import arbitrum_logo from '@/assets/logo_lunbo/arbitrum_logo.png'
 // import binance_logo from '@/assets/logo_lunbo/binance_logo.png'
@@ -401,8 +402,8 @@ onUnmounted(() => {
                 <video
                     ref="videoPlayerHeader"
                     class="video_style_small"
-                    src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
-                    poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
+                    src="/video/home_video.mp4"
+                    :poster="homeVideo"
                     autoplay
                     preload="auto"
                     playsinline
@@ -535,9 +536,9 @@ onUnmounted(() => {
               <video
                   ref="videoPlayerHeader"
                   class="video_style"
-                  src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
                   preload="auto"
-                  poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
+                  src="/video/home_video.mp4"
+                  :poster="homeVideo"
                   muted
                   playsinline
                   loop
