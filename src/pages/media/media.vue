@@ -61,7 +61,7 @@ const slidesArr = [
 const videoList = [
 
   {
-    title: 'Innovate, Integrate, Iterate Introducing Alaya Ai Pro',
+    title: 'Innovate, Integrate, Iterate Introducing Alaya AI Pro',
     time: 'March 10, 2025',
     image: imgTwelve,
     link: 'https://medium.com/@alaya-ai/innovate-integrate-iterate-introducing-alaya-ai-pro-290af15a652e'

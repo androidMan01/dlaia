@@ -403,10 +403,10 @@ onUnmounted(() => {
                     src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
                     preload="auto"
                     poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
-                    muted=""
                     playsinline=""
-                    loop
-                    autoplay=""></video>
+                    autoplay
+                    muted
+                    loop></video>
               </div>
             </div>
             <div class="home_one_title">
@@ -646,7 +646,7 @@ onUnmounted(() => {
         </div>
 
         <div class="two_txt_two">
-          Inspired by swarm intelligence systems, <span class="txt_green">Alaya Al</span> provides tailored
+          Inspired by swarm intelligence systems, <span class="txt_green">Alaya AI</span> provides tailored
           data sampling for enterprise applications and small-medium developers through
           customisable Web3 incentives and RLHF/HITL precision sampling.
         </div>

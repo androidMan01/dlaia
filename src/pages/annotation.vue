@@ -157,7 +157,7 @@ onMounted(() => {
         <h1 class="annotation_title">YOUR GATEWAY TO THE<br>
           WORLD OF WEB3 AI</h1>
         <div class="annotation_content" style="text-align: center;">
-          Alaya Al's distributed data platform combines proven data labelling service models from Web2 providers with
+          Alaya AI's distributed data platform combines proven data labelling service models from Web2 providers with
           organic Web3 incentives and community networks for superior user traction. <br><br>
           Contribute data and earn rewards, anytime, anywhere.
         </div>
@@ -206,7 +206,7 @@ onMounted(() => {
           <div class="annotation_list_content">
             <div class="annotation_list_item">
               <div class="annotation_list_item_txt">Monetise your spare time by
-                accessing a wide range of Al
+                accessing a wide range of AI
                 training tasks and challenges
                 anytime, anywhere.
               </div>
@@ -228,7 +228,7 @@ onMounted(() => {
             </video>
             <div class="annotation_list_item">
               <div class="annotation_list_item_txt">Monetise your spare time by
-                accessing a wide range of Al
+                accessing a wide range of AI
                 training tasks and challenges
                 anytime, anywhere.
               </div>
