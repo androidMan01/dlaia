@@ -403,7 +403,7 @@ onUnmounted(() => {
                     src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
                     preload="auto"
                     poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
-                    playsinline=""
+                    playsinline="true"
                     autoplay
                     muted
                     loop></video>
@@ -537,10 +537,10 @@ onUnmounted(() => {
                   src="https://lshtest.oss-cn-hangzhou.aliyuncs.com/mp4/1b354094e7c51b228e42d1fcbfa5500a.mp4"
                   preload="auto"
                   poster="https://lshtest.oss-cn-hangzhou.aliyuncs.com/pic/zheng.jpg"
-                  muted=""
-                  playsinline=""
+                  muted
+                  playsinline="true"
                   loop
-                  autoplay=""></video>
+                  autoplay></video>
             </div>
           </div>
         </div>
