@@ -175,9 +175,16 @@ const startCarousel = () => {
   }, 3000); // 每 6 秒切换一次
 };
 
+const videoPlayerHeader = ref(null); // 创建 video 元素的引用
 
 onMounted(() => {
   startCarousel();
+  // 页面加载完成后，尝试播放视频
+  if (videoPlayerHeader.value) {
+    videoPlayerHeader.value.play().catch(error => {
+      console.error('自动播放失败:', error);
+    });
+  }
   updateScale();
   if (logoContainer.value) {
     animate()
