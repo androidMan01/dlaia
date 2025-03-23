@@ -508,14 +508,12 @@ onUnmounted(() => {
   }
 
   .labeling_one_txt_sub_txt{
-    font-size: 10px;
+    font-size: 12px;
     padding: 5px 10px;
     color: white;
     background: #5150e7;
     border-radius: 2px;
     width: 100%;
-    text-align: justify;
-    text-align-last: justify;
   }
   .labeling_one_sub_img{
     width: 80px;
